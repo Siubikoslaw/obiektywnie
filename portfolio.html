@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Fotograf - Portfolio</title>
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -11,57 +11,47 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@300;400;500;600&display=swap');
-        body {
-            font-family: 'Raleway', sans-serif;
-            color: #333;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-        }
+        body { font-family: 'Raleway', sans-serif; color: #333; }
+        h1,h2,h3,h4,h5,h6 { font-family: 'Playfair Display', serif; }
         .text-beige { color: #F5E6D3; }
         .bg-beige { background-color: #F5E6D3; }
         .border-beige { border-color: #F5E6D3; }
-        /* Custom CSS for Lightbox */
+
+        /* Lightbox */
         .lightbox-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            inset: 0;
+            background: rgba(0,0,0,.9);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 1000;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
+            transition: opacity .25s ease, visibility .25s ease;
         }
-        .lightbox-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
+        .lightbox-overlay.active { opacity: 1; visibility: visible; }
         .lightbox-content {
             position: relative;
-            max-width: 90%;
+            max-width: 92%;
             max-height: 90%;
-            display: flex;
+            display:flex;
             flex-direction: column;
-            align-items: center;
+            align-items:center;
         }
         .lightbox-image {
             max-width: 100%;
             max-height: 80vh;
             object-fit: contain;
             border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 40px rgba(0,0,0,.6);
         }
         .lightbox-close {
             position: absolute;
-            top: -30px;
-            right: -30px;
+            top: -32px;
+            right: -32px;
             color: white;
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             cursor: pointer;
             line-height: 1;
         }
@@ -69,22 +59,17 @@
             .lightbox-close {
                 top: 10px;
                 right: 10px;
-                background-color: rgba(0,0,0,0.5);
-                border-radius: 50%;
+                background-color: rgba(0,0,0,.45);
+                border-radius: 999px;
                 width: 40px;
                 height: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 1.8rem;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                font-size: 1.4rem;
             }
         }
-        .lightbox-caption {
-            color: white;
-            margin-top: 1rem;
-            text-align: center;
-            font-size: 1.1rem;
-        }
+        .lightbox-caption { color: white; margin-top: 0.75rem; text-align:center; font-size:1.05rem; }
     </style>
 </head>
 <body class="bg-white text-gray-800 antialiased">
@@ -92,9 +77,8 @@
     <!-- Navbar -->
     <nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-sm py-4">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold tracking-wider uppercase text-gray-900 hover:text-gray-700 transition duration-300">
-                Obiektywnie
-            </a>
+            <a href="index.html" class="text-2xl font-bold tracking-wider uppercase text-gray-900 hover:text-gray-700 transition duration-300">Obiektywnie</a>
+
             <div class="hidden md:flex space-x-8">
                 <a href="index.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Strona Główna</a>
                 <a href="portfolio.html" class="text-gray-900 font-bold transition duration-300 tracking-wide">Portfolio</a>
@@ -102,10 +86,11 @@
                 <a href="services.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Usługi</a>
                 <a href="contact.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Kontakt</a>
             </div>
-            <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-gray-900 transition duration-300">
-                <i data-feather="menu" class="w-7 h-7"></i>
-            </button>
+
+            <!-- Simple mobile button (no feather toggle race) -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-gray-900 transition duration-300 text-2xl leading-none" aria-expanded="false" aria-controls="mobile-menu">☰</button>
         </div>
+
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white bg-opacity-95 backdrop-blur-sm shadow-lg py-4 border-t border-gray-100">
             <div class="flex flex-col items-center space-y-4">
@@ -119,7 +104,7 @@
     </nav>
 
     <main class="pt-24">
-        <!-- Portfolio Hero -->
+        <!-- Hero -->
         <section class="relative bg-gray-900 py-20 md:py-32 text-center text-white overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-700 opacity-90"></div>
             <div class="container mx-auto px-6 relative z-10" data-aos="fade-up" data-aos-duration="1000">
@@ -130,160 +115,75 @@
             </div>
         </section>
 
-        <!-- Portfolio Gallery -->
+        <!-- Gallery -->
         <section class="py-16 bg-white">
             <div class="container mx-auto px-6">
-            <!-- Gallery Grid -->
-            <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Wedding Photos -->
-                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="weddings" data-aos="zoom-in" data-aos-delay="100">
-                <img src="zdjecie.png" alt="Zdjęcie Ślubne 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
-                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                </div>
-                </div>
-                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="weddings" data-aos="zoom-in" data-aos-delay="150">
-                <img src="zdjecie.png" alt="Zdjęcie Ślubne 2" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
-                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                </div>
-                </div>
-                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="weddings" data-aos="zoom-in" data-aos-delay="200">
-                <img src="zdjecie.png" alt="Zdjęcie Ślubne 3" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
-                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                </div>
-                </div>
+                <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Sample gallery items - replace zdjecie.png with real paths -->
+                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="weddings" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="zdjecie.png" alt="Zdjęcie Ślubne 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" />
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
+                        </div>
+                    </div>
 
-                <!-- Portrait Photos -->
-                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="portraits" data-aos="zoom-in" data-aos-delay="250">
-                <img src="zdjecie.png" alt="Zdjęcie Portretowe 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
-                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                </div>
-                </div>
-                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="portraits" data-aos="zoom-in" data-aos-delay="300">
-                <img src="zdjecie.png" alt="Zdjęcie Portretowe 2" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
-                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                </div>
-                </div>
-                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="portraits" data-aos="zoom-in" data-aos-delay="350">
-                <img src="zdjecie.png" alt="Zdjęcie Portretowe 3" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
-                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                </div>
-                </div>
+                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="portraits" data-aos="zoom-in" data-aos-delay="150">
+                        <img src="zdjecie.png" alt="Zdjęcie Portretowe 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" />
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
+                        </div>
+                    </div>
 
-                <!-- Event Photos -->
-                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="events" data-aos="zoom-in" data-aos-delay="400">
-                <img src="zdjecie.png" alt="Zdjęcie z Wydarzenia 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
-                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                </div>
-                </div>
-                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="events" data-aos="zoom-in" data-aos-delay="450">
-                <img src="zdjecie.png" alt="Zdjęcie z Wydarzenia 2" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
-                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                </div>
-                </div>
+                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="landscape" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="zdjecie.png" alt="Zdjęcie Krajobrazowe 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" />
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
+                        </div>
+                    </div>
 
-                <!-- Landscape Photos -->
-                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="landscape" data-aos="zoom-in" data-aos-delay="500">
-                <img src="zdjecie.png" alt="Zdjęcie Krajobrazowe 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
-                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                </div>
-                </div>
-                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="landscape" data-aos="zoom-in" data-aos-delay="550">
-                <img src="zdjecie.png" alt="Zdjęcie Krajobrazowe 2" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
-                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                </div>
-                </div>
+                    <!-- duplicate more items to fill grid -->
+                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="product" data-aos="zoom-in" data-aos-delay="250">
+                        <img src="zdjecie.png" alt="Zdjęcie Produktowe 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" />
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
+                        </div>
+                    </div>
 
-                <!-- Product Photos -->
-                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="product" data-aos="zoom-in" data-aos-delay="600">
-                <img src="zdjecie.png" alt="Zdjęcie Produktowe 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
-                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
+                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="events" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="zdjecie.png" alt="Zdjęcie z Wydarzenia 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" />
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="portraits" data-aos="zoom-in" data-aos-delay="350">
+                        <img src="zdjecie.png" alt="Zdjęcie Portretowe 2" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" />
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
+                        </div>
+                    </div>
+
                 </div>
-                </div>
-                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="product" data-aos="zoom-in" data-aos-delay="650">
-                <img src="zdjecie.png" alt="Zdjęcie Produktowe 2" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
-                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                </div>
-                </div>
-            </div>
             </div>
         </section>
 
-        <script>
-            function openLightbox(image) {
-                const lightbox = document.getElementById('lightbox');
-                const lightboxImage = document.getElementById('lightbox-image');
-                const lightboxCaption = document.getElementById('lightbox-caption');
-                const closeBtn = document.getElementById('lightbox-close-button');
-
-                if (!lightbox || !lightboxImage) return;
-
-                // Set image and caption
-                lightboxImage.src = image.src;
-                lightboxImage.alt = image.alt || '';
-                lightboxCaption.textContent = image.alt || '';
-
-                // Show lightbox and prevent page scroll
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
-
-                // Close handler (removes listeners to avoid duplicates)
-                function closeLightbox() {
-                    lightbox.classList.remove('active');
-                    document.body.style.overflow = '';
-                    closeBtn.removeEventListener('click', closeLightbox);
-                    lightbox.removeEventListener('click', onOverlayClick);
-                    document.removeEventListener('keydown', onEsc);
-                }
-
-                // Close when clicking outside image (overlay)
-                function onOverlayClick(e) {
-                    if (e.target === lightbox) closeLightbox();
-                }
-
-                // Close on Escape key
-                function onEsc(e) {
-                    if (e.key === 'Escape') closeLightbox();
-                }
-
-                closeBtn.addEventListener('click', closeLightbox);
-                lightbox.addEventListener('click', onOverlayClick);
-                document.addEventListener('keydown', onEsc);
-            }
-        </script>
-    </main>
-
-    <!-- Lightbox Overlay -->
-    <div id="lightbox" class="lightbox-overlay">
-        <div class="lightbox-content">
-            <span class="lightbox-close" id="lightbox-close-button">&times;</span>
-            <img id="lightbox-image" class="lightbox-image" src="" alt="Powiększone Zdjęcie">
-            <p id="lightbox-caption" class="lightbox-caption"></p>
+        <!-- Lightbox Overlay -->
+        <div id="lightbox" class="lightbox-overlay" aria-hidden="true">
+            <div class="lightbox-content" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
+                <button id="lightbox-close-button" class="lightbox-close" aria-label="Zamknij">&times;</button>
+                <img id="lightbox-image" class="lightbox-image" src="" alt="">
+                <p id="lightbox-caption" class="lightbox-caption"></p>
+            </div>
         </div>
-    </div>
+
+    </main>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
             <div>
-                <h3 class="text-xl font-bold mb-4 text-beige">
-                                    Obiektywnie
-
-                </h3>
-                <p class="text-gray-400 leading-relaxed">
-                    Z Opola, uchwycam chwile, opowiadam historie.
-                </p>
+                <h3 class="text-xl font-bold mb-4 text-beige">Obiektywnie</h3>
+                <p class="text-gray-400 leading-relaxed">Z Opola, uchwycam chwile, opowiadam historie.</p>
             </div>
             <div>
                 <h3 class="text-xl font-bold mb-4 text-beige">Szybkie Linki</h3>
@@ -298,94 +198,104 @@
             <div>
                 <h3 class="text-xl font-bold mb-4 text-beige">Połącz się</h3>
                 <div class="flex justify-center md:justify-start space-x-6">
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Instagram">
-                        <i data-feather="instagram" class="w-6 h-6"></i>
-                    </a>
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Facebook">
-                        <i data-feather="facebook" class="w-6 h-6"></i>
-                    </a>
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="E-mail">
-                        <i data-feather="mail" class="w-6 h-6"></i>
-                    </a>
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Instagram"><i data-feather="instagram" class="w-6 h-6"></i></a>
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Facebook"><i data-feather="facebook" class="w-6 h-6"></i></a>
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="E-mail"><i data-feather="mail" class="w-6 h-6"></i></a>
                 </div>
             </div>
         </div>
-        <div class="mt-10 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">
-            &copy; 2025 Obiektywnie. Wszelkie prawa zastrzeżone.
-        </div>
+        <div class="mt-10 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">&copy; 2025 Obiektywnie. Wszelkie prawa zastrzeżone.</div>
     </footer>
 
     <script>
-        AOS.init({
-            once: true,
-            offset: 50,
-        });
-        feather.replace();
-
-        // Mobile menu functionality
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenuButton.querySelector('i').setAttribute('data-feather', mobileMenu.classList.contains('hidden') ? 'menu' : 'x');
-            feather.replace();
+        // Init AOS and feather icons after DOM ready
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.AOS) AOS.init({ once: true, offset: 50 });
+            if (window.feather) feather.replace();
         });
 
-        // Portfolio filtering
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
+        // Mobile menu toggle (simple text toggle to avoid icon replacement race)
+        (function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (!mobileMenuButton || !mobileMenu) return;
 
-        if (filterButtons.length > 0) {
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => {
-                        btn.classList.remove('active-filter', 'bg-beige', 'text-gray-900', 'font-bold', 'bg-gray-200', 'text-gray-800', 'font-medium');
-                    });
+            mobileMenuButton.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenuButton.textContent = '✕';
+                    mobileMenuButton.setAttribute('aria-expanded', 'true');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.textContent = '☰';
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
 
-                    // Add active class to the clicked button
-                    button.classList.add('active-filter', 'bg-beige', 'text-gray-900', 'font-bold');
-                    button.classList.remove('bg-gray-200', 'text-gray-800', 'font-medium');
+        // Single, robust lightbox: openLightbox by event delegation
+        (function () {
+            const gallery = document.getElementById('gallery');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const closeBtn = document.getElementById('lightbox-close-button');
 
-                    const filter = button.dataset.filter;
+            if (!gallery || !lightbox || !lightboxImage) return;
 
-                    galleryItems.forEach(item => {
-                        if (filter === 'all' || item.dataset.category === filter) {
-                            // Show item (use empty string to allow CSS to control display or default block)
-                            item.style.display = '';
-                            setTimeout(() => item.classList.remove('opacity-0', 'scale-95'), 10); // Re-show with animation
-                            item.classList.add('opacity-100', 'scale-100');
-                        } else {
-                            item.classList.remove('opacity-100', 'scale-100');
-                            item.classList.add('opacity-0', 'scale-95');
-                            setTimeout(() => item.style.display = 'none', 300); // Hide after animation
-                        }
-                    });
-                });
+            // Open lightbox when an <img> inside gallery is clicked
+            gallery.addEventListener('click', function (e) {
+                const el = e.target;
+                if (el && el.tagName === 'IMG') {
+                    openLightbox(el);
+                }
             });
 
-            // Initialize active filter button on load (prefer "all" if present, otherwise first button)
-            const initialButton = document.querySelector('.filter-btn[data-filter="all"]') || filterButtons[0];
-            if (initialButton) initialButton.click();
-        }
-
-        // Handle URL parameters for initial filtering
-        document.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const categoryParam = urlParams.get('category');
-            if (categoryParam) {
-                const targetButton = document.querySelector(`.filter-btn[data-filter="${categoryParam}"]`);
-                if (targetButton) {
-                    targetButton.click();
-                } else {
-                    document.querySelector('.filter-btn[data-filter="all"]').click();
-                }
-            } else {
-                document.querySelector('.filter-btn[data-filter="all"]').click();
+            // Centralized open function
+            function openLightbox(imgEl) {
+                lightboxImage.src = imgEl.src;
+                lightboxImage.alt = imgEl.alt || '';
+                lightboxCaption.textContent = imgEl.alt || '';
+                lightbox.classList.add('active');
+                lightbox.setAttribute('aria-hidden', 'false');
+                // prevent background scroll
+                document.documentElement.style.overflow = 'hidden';
+                document.body.style.overflow = 'hidden';
+                // attach listeners for close
+                document.addEventListener('keydown', onKeyDown);
+                lightbox.addEventListener('click', onOverlayClick);
             }
-        });
 
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                lightbox.setAttribute('aria-hidden', 'true');
+                // restore scroll
+                document.documentElement.style.overflow = '';
+                document.body.style.overflow = '';
+                // cleanup listeners
+                document.removeEventListener('keydown', onKeyDown);
+                lightbox.removeEventListener('click', onOverlayClick);
+                // clear image (optional)
+                setTimeout(() => {
+                    lightboxImage.src = '';
+                    lightboxImage.alt = '';
+                    lightboxCaption.textContent = '';
+                }, 200);
+            }
+
+            function onOverlayClick(e) {
+                // close if clicked on overlay (outside content)
+                if (e.target === lightbox) closeLightbox();
+            }
+
+            function onKeyDown(e) {
+                if (e.key === 'Escape' || e.key === 'Esc') closeLightbox();
+            }
+
+            // close button click
+            if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+        })();
     </script>
 </body>
 </html>
