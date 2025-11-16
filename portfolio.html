@@ -130,15 +130,6 @@
             </div>
         </section>
 
-        <!-- Lightbox Overlay -->
-        <div id="lightbox" class="lightbox-overlay">
-            <div class="lightbox-content">
-                <span class="lightbox-close" id="lightbox-close-button">&times;</span>
-                <img id="lightbox-image" class="lightbox-image" src="" alt="Powiększone Zdjęcie">
-                <p id="lightbox-caption" class="lightbox-caption"></p>
-            </div>
-        </div>
-
         <!-- Portfolio Gallery -->
         <section class="py-16 bg-white">
             <div class="container mx-auto px-6">
@@ -273,7 +264,14 @@
         </script>
     </main>
 
-    <!-- Duplicate lightbox removed to avoid duplicate IDs -->
+    <!-- Lightbox Overlay -->
+    <div id="lightbox" class="lightbox-overlay">
+        <div class="lightbox-content">
+            <span class="lightbox-close" id="lightbox-close-button">&times;</span>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="Powiększone Zdjęcie">
+            <p id="lightbox-caption" class="lightbox-caption"></p>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
@@ -371,35 +369,6 @@
             const initialButton = document.querySelector('.filter-btn[data-filter="all"]') || filterButtons[0];
             if (initialButton) initialButton.click();
         }
-
-        // Lightbox functionality
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImage = document.getElementById('lightbox-image');
-        const lightboxCaption = document.getElementById('lightbox-caption');
-        const lightboxCloseButton = document.getElementById('lightbox-close-button');
-
-        galleryItems.forEach(item => {
-            const img = item.querySelector('img');
-            img.addEventListener('click', () => {
-                lightboxImage.src = img.src;
-                lightboxImage.alt = img.alt;
-                lightboxCaption.textContent = img.alt; // Use alt text as caption
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-            });
-        });
-
-        lightboxCloseButton.addEventListener('click', () => {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = ''; // Restore scrolling
-        });
-
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) { // Close if clicked outside the image
-                lightbox.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
 
         // Handle URL parameters for initial filtering
         document.addEventListener('DOMContentLoaded', () => {
