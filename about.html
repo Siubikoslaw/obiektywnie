@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotograf - O Mnie</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@300;400;500;600&display=swap');
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .text-beige { color: #F5E6D3; }
+        .bg-beige { background-color: #F5E6D3; }
+        .border-beige { border-color: #F5E6D3; }
+        .quote-bubble {
+            position: relative;
+            background: #f8f8f8;
+            border-left: 5px solid #F5E6D3;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+        .quote-bubble::before {
+            content: "\201C"; /* Left double quotation mark */
+            position: absolute;
+            top: 0.5rem;
+            left: 0.5rem;
+            font-size: 4rem;
+            color: #ccc;
+            opacity: 0.5;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-sm py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-wider uppercase text-gray-900 hover:text-gray-700 transition duration-300">
+                [Photographer Name]
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Strona Główna</a>
+                <a href="portfolio.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Portfolio</a>
+                <a href="about.html" class="text-gray-900 font-bold transition duration-300 tracking-wide">O Mnie</a>
+                <a href="services.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Usługi</a>
+                <a href="contact.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Kontakt</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-gray-900 transition duration-300">
+                <i data-feather="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white bg-opacity-95 backdrop-blur-sm shadow-lg py-4 border-t border-gray-100">
+            <div class="flex flex-col items-center space-y-4">
+                <a href="index.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Strona Główna</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Portfolio</a>
+                <a href="about.html" class="text-gray-900 font-bold text-lg">O Mnie</a>
+                <a href="services.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Usługi</a>
+                <a href="contact.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24">
+        <!-- About Hero -->
+        <section class="relative bg-gray-900 py-20 md:py-32 text-center text-white overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-700 opacity-90"></div>
+            <div class="container mx-auto px-6 relative z-10" data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Moja Historia</h1>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto opacity-90">
+                    Poznaj osobę stojącą za obiektywem i podróż, która ukształtowała moją sztukę.
+                </p>
+            </div>
+        </section>
+
+        <!-- Photographer Bio & Story -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2" data-aos="fade-right" data-aos-duration="1000">
+                        <img src="http://static.photos/people/1024x576/123" alt="Portret Fotografa" class="w-full h-auto object-cover rounded-xl shadow-lg grayscale hover:grayscale-0 transition-all duration-500 ease-in-out">
+                    </div>
+                    <div class="md:w-1/2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <h2 class="text-4xl font-bold mb-6 text-gray-900">
+                            Podróż Wizjonera
+                        </h2>
+                        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                            Nazywam się [Nazwa Fotografa], a moja podróż w świat fotografii rozpoczęła się ponad dekadę temu wśród malowniczych krajobrazów Opola, w Polsce. To, co zaczęło się jako hobby, szybko przekształciło się w głęboką pasję i zawodowe powołanie. Byłem/am urzeczony/a mocą pojedynczej klatki, zdolnej opowiedzieć całą historię, wywołać emocje i zamrozić ulotne chwile w czasie.
+                        </p>
+                        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                            Opole, z jego bogatą historią, żywą kulturą i spokojnym pięknem natury, było niekończącym się źródłem inspiracji. Brukowane uliczki, rzeka Odra i różnorodne twarze jego mieszkańców przyczyniły się do ukształtowania mojej perspektywy artystycznej. Wierzę, że każda osoba, każde wydarzenie i każda scena zawiera unikalną narrację czekającą na odkrycie i piękne zachowanie.
+                        </p>
+                        <p class="text-lg leading-relaxed text-gray-700">
+                            Moje podejście to połączenie szczerego opowiadania historii i wyrafinowanego artyzmu, zapewniające, że każde zdjęcie jest nie tylko obrazem, ale dziełem sztuki, które odzwierciedla prawdziwe emocje i ponadczasową elegancję.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Behind the Scenes & Philosophy -->
+        <section class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-900" data-aos="fade-up">
+                    Za Obiektywem
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="http://static.photos/studio/640x360/78" alt="Kulisowe 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-lg font-semibold">Staranna Kompozycja</p>
+                        </div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="http://static.photos/office/640x360/89" alt="Kulisowe 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-lg font-semibold">Perfekcja Postprodukcji</p>
+                        </div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="http://static.photos/people/640x360/90" alt="Kulisowe 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-lg font-semibold">Uchwycanie Autentycznych Emocji</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-lg leading-relaxed text-gray-700 text-center max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                    Każda sesja to wspólna podróż, od początkowej koncepcji po ostateczne dostarczenie. Skrupulatnie planuję, starannie komponuję i przemyślanie edytuję, aby każde zdjęcie przekroczyło oczekiwania i odzwierciedlało Twoją unikalną historię.
+                </p>
+            </div>
+        </section>
+
+        <!-- Awards, Exhibitions, Press -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-900" data-aos="fade-up">
+                    Wyróżnienia i Uznanie
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div data-aos="fade-right" data-aos-duration="1000">
+                        <h3 class="text-3xl font-semibold mb-4 text-gray-900">Nagrody i Wyróżnienia</h3>
+                        <ul class="list-disc list-inside text-lg text-gray-700 space-y-3">
+                            <li>"Najlepszy Fotograf Ślubny Regionu Opolskiego" - Magazyn Lokalny (2022)</li>
+                            <li>Wyróżnienie w Cyfrowej Publikacji "Artystyczne Impresje" (2021)</li>
+                            <li>Top 10 Fotografów Krajobrazowych, Polska - Gildia Fotograficzna (2020)</li>
+                            <li>Wystawa w Muzeum Sztuki Regionalnej w Opolu (2019)</li>
+                        </ul>
+                    </div>
+                    <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <h3 class="text-3xl font-semibold mb-4 text-gray-900">Prasa i Współpraca</h3>
+                        <ul class="list-disc list-inside text-lg text-gray-700 space-y-3">
+                            <li>Wywiad w Radiu Opole na temat "Światła i Cienia w Fotografii Miejskiej"</li>
+                            <li>Fotografia dla kampanii promocyjnych Urzędu Miasta Opola</li>
+                            <li>Gościnny wykładowca na warsztatach Opolskiego Klubu Fotograficznego</li>
+                            <li>Współpraca z lokalnymi projektantami mody przy sesjach redakcyjnych</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-900" data-aos="fade-up">
+                    Co Mówią Moi Klienci
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="quote-bubble" data-aos="fade-up" data-aos-delay="100">
+                        <p class="text-gray-700 italic mb-4 relative z-10">
+                            "[Nazwa Fotografa] uchwycił/a nasz dzień ślubu z taką gracją i artyzmem. Każde zdjęcie opowiada historię, pięknie zachowując emocje i radość. Nie mogliśmy być bardziej zadowoleni z rezultatów – to prawdziwe arcydzieła!"
+                        </p>
+                        <p class="font-semibold text-gray-800 text-right">- Anna i Jakub K., Opole</p>
+                    </div>
+                    <div class="quote-bubble" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-gray-700 italic mb-4 relative z-10">
+                            "Sesja portretowa była absolutną przyjemnością! [Nazwa Fotografa] sprawił/a, że czułem/am się tak komfortowo i naprawdę wydobył/a moją osobowość. Zdjęcia są oszałamiające i dokładnie takie, jak sobie wyobrażałem/am. Gorąco polecam!"
+                        </p>
+                        <p class="font-semibold text-gray-800 text-right">- Maria S., Wrocław</p>
+                    </div>
+                    <div class="quote-bubble" data-aos="fade-up" data-aos-delay="300">
+                        <p class="text-gray-700 italic mb-4 relative z-10">
+                            "Współpraca z [Nazwa Fotografa] przy wprowadzaniu naszego produktu na rynek przebiegła bezproblemowo. Dbałość o szczegóły i kreatywna wizja zaowocowały zdjęciami, które doskonale zaprezentowały naszą markę. Profesjonalna i wyjątkowa jakość."
+                        </p>
+                        <p class="font-semibold text-gray-800 text-right">- CEO, [Nazwa Firmy]</p>
+                    </div>
+                    <div class="quote-bubble" data-aos="fade-up" data-aos-delay="400">
+                        <p class="text-gray-700 italic mb-4 relative z-10">
+                            "Moje oczekiwania wobec fotografii krajobrazowej zostały przekroczone. [Nazwa Fotografa] uchwycił/a nie tylko piękno natury, ale także jej duszę. Odbitki są zapierające dech w piersiach!"
+                        </p>
+                        <p class="font-semibold text-gray-800 text-right">- Tomasz P., Pasjonat Fotografii</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="bg-gray-900 py-20 text-center text-white">
+            <div class="container mx-auto px-6" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Stwórzmy Twoje Dziedzictwo</h2>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 opacity-80">
+                    Gotowy/a, aby opowiedzieć swoją unikalną historię poprzez urzekające zdjęcia?
+                </p>
+                <a href="contact.html" class="bg-beige text-gray-900 px-10 py-4 rounded-full text-xl font-semibold hover:bg-opacity-90 transform hover:scale-105 transition duration-300 shadow-lg">
+                    Skontaktuj Się Ze Mną
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <div>
+                <h3 class="text-xl font-bold mb-4 text-beige">
+                    [Nazwa Fotografa]
+                </h3>
+                <p class="text-gray-400 leading-relaxed">
+                    Z Opola, Polska, uchwycam chwile, opowiadam historie.
+                </p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4 text-beige">Szybkie Linki</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Strona Główna</a></li>
+                    <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition duration-300">Portfolio</a></li>
+                    <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">O Mnie</a></li>
+                    <li><a href="services.html" class="text-gray-400 hover:text-white transition duration-300">Usługi</a></li>
+                    <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Kontakt</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4 text-beige">Połącz się</h3>
+                <div class="flex justify-center md:justify-start space-x-6">
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Instagram">
+                        <i data-feather="instagram" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Facebook">
+                        <i data-feather="facebook" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="E-mail">
+                        <i data-feather="mail" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-10 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">
+            &copy; 2023 [Nazwa Fotografa]. Wszelkie prawa zastrzeżone.
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            once: true,
+            offset: 50,
+        });
+        feather.replace();
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuButton.querySelector('i').setAttribute('data-feather', mobileMenu.classList.contains('hidden') ? 'menu' : 'x');
+            feather.replace();
+        });
+    </script>
+</body>
+</html>

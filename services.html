@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotograf - Usługi</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@300;400;500;600&display=swap');
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .text-beige { color: #F5E6D3; }
+        .bg-beige { background-color: #F5E6D3; }
+        .border-beige { border-color: #F5E6D3; }
+        .accordion-header {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.3s ease;
+        }
+        .accordion-header:hover {
+            background-color: #efefef;
+        }
+        .accordion-content {
+            padding: 1rem 1.5rem;
+            background-color: #fff;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-content.active {
+            max-height: 200px; /* Adjust based on content */
+            transition: max-height 0.3s ease-in;
+        }
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-sm py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-wider uppercase text-gray-900 hover:text-gray-700 transition duration-300">
+                [Photographer Name]
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Strona Główna</a>
+                <a href="portfolio.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Portfolio</a>
+                <a href="about.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">O Mnie</a>
+                <a href="services.html" class="text-gray-900 font-bold transition duration-300 tracking-wide">Usługi</a>
+                <a href="contact.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Kontakt</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-gray-900 transition duration-300">
+                <i data-feather="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white bg-opacity-95 backdrop-blur-sm shadow-lg py-4 border-t border-gray-100">
+            <div class="flex flex-col items-center space-y-4">
+                <a href="index.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Strona Główna</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Portfolio</a>
+                <a href="about.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">O Mnie</a>
+                <a href="services.html" class="text-gray-900 font-bold text-lg">Usługi</a>
+                <a href="contact.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24">
+        <!-- Services Hero -->
+        <section class="relative bg-gray-900 py-20 md:py-32 text-center text-white overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-700 opacity-90"></div>
+            <div class="container mx-auto px-6 relative z-10" data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Moje Usługi</h1>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto opacity-90">
+                    Dostosowane rozwiązania fotograficzne, aby uchwycić Twoje najcenniejsze chwile i kluczowe projekty.
+                </p>
+            </div>
+        </section>
+
+        <!-- Service Packages -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-900" data-aos="fade-up">
+                    Pakiety Fotograficzne
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Wedding Package -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-xl border-t-4 border-beige flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                        <div>
+                            <i data-feather="heart" class="w-10 h-10 text-beige mb-4"></i>
+                            <h3 class="text-3xl font-bold mb-4 text-gray-900">Śluby</h3>
+                            <p class="text-gray-700 mb-6 leading-relaxed">
+                                Od kameralnych ceremonii po wielkie uroczystości – uchwycam każdą cenną chwilę Twojego wyjątkowego dnia z elegancją i emocjami.
+                            </p>
+                            <ul class="text-gray-600 space-y-2 mb-6">
+                                <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>Całodzienne pokrycie</li>
+                                <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>Sesja narzeczeńska wliczona</li>
+                                <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>Galeria online i spersonalizowany album</li>
+                                <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>Pliki cyfrowe w wysokiej rozdzielczości</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html?service=weddings" class="mt-auto bg-gray-900 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-beige hover:text-gray-900 transition duration-300 text-center">
+                            Poproś o wycenę
+                        </a>
+                    </div>
+
+                    <!-- Portrait Package -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-xl border-t-4 border-beige flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+                        <div>
+                            <i data-feather="user" class="w-10 h-10 text-beige mb-4"></i>
+                            <h3 class="text-3xl font-bold mb-4 text-gray-900">Portrety</h3>
+                            <p class="text-gray-700 mb-6 leading-relaxed">
+                                Uchwycenie indywidualnej osobowości, więzi rodzinnych lub profesjonalnych zdjęć biznesowych z autentycznym i artystycznym akcentem.
+                            </p>
+                            <ul class="text-gray-600 space-y-2 mb-6">
+                                <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>Sesja 1-2 godziny</li>
+                                <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>Wybrana lokalizacja (Opole i okolice)</li>
+                                <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>Zmiana stylizacji</li>
+                                <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>Retuszowane zdjęcia cyfrowe</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html?service=portraits" class="mt-auto bg-gray-900 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-beige hover:text-gray-900 transition duration-300 text-center">
+                            Umów Sesję
+                        </a>
+                    </div>
+
+                    <!-- Events & Commercial Package -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-xl border-t-4 border-beige flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+                        <div>
+                            <i data-feather="briefcase" class="w-10 h-10 text-beige mb-4"></i>
+                            <h3 class="text-3xl font-bold mb-4 text-gray-900">Wydarzenia i Komercja</h3>
+                            <p class="text-gray-700 mb-6 leading-relaxed">
+                                Dokumentowanie wydarzeń firmowych, premier produktów lub tworzenie efektownych zdjęć brandingowych dla firm.
+                            </p>
+                            <ul class="text-gray-600 space-y-2 mb-6">
+                                <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>Cennik godzinowy / projektowy</li>
+                                <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>Indywidualny brief i rozwój koncepcji</li>
+                                <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>Prawa do użytkowania dostosowane do potrzeb</li>
+                                <li class="flex items-center"><i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>Opcje szybkiej realizacji</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html?service=commercial" class="mt-auto bg-gray-900 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-beige hover:text-gray-900 transition duration-300 text-center">
+                            Omów Swój Projekt
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Service Descriptions -->
+        <section class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-900" data-aos="fade-up">
+                    Szczegółowy Opis Mojej Oferty
+                </h2>
+                <div class="space-y-12">
+                    <div class="flex flex-col md:flex-row items-center gap-10 bg-white p-8 rounded-lg shadow-md" data-aos="fade-right" data-aos-delay="100">
+                        <img src="http://static.photos/wedding/640x360/14" alt="Fotografia Ślubna" class="w-full md:w-1/3 h-64 object-cover rounded-lg">
+                        <div class="md:w-2/3">
+                            <h3 class="text-3xl font-bold mb-4 text-gray-900">Fotografia Ślubna i Elopementowa</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Dzień Twojego ślubu to mozaika ulotnych chwil, wzruszających emocji i pięknych detali. Specjalizuję się w uchwytywaniu tej wyjątkowej historii za pomocą reporterskiego, a jednocześnie artystycznego podejścia, dbając o to, aby każde spojrzenie, każdy śmiech i każda łza zostały zachowane. Moim celem jest dostarczenie ponadczasowej kolekcji obrazów, które będziecie pielęgnować przez pokolenia, odzwierciedlających prawdziwą esencję Waszej miłości. Pakiety można dostosować do konkretnych potrzeb, niezależnie od tego, czy jest to intymny elopement, czy wielka uroczystość w Opolu i poza nim.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row-reverse items-center gap-10 bg-white p-8 rounded-lg shadow-md" data-aos="fade-left" data-aos-delay="200">
+                        <img src="http://static.photos/people/640x360/15" alt="Fotografia Portretowa" class="w-full md:w-1/3 h-64 object-cover rounded-lg">
+                        <div class="md:w-2/3">
+                            <h3 class="text-3xl font-bold mb-4 text-gray-900">Portrety Osobiste i Rodzinne</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Od żywych portretów indywidualnych, które uchwycą Twój unikalny ducha, po wzruszające zdjęcia rodzinne, które opowiadają Twoją historię – moje sesje portretowe są zaprojektowane tak, aby były relaksujące i przyjemne. Pracuję z naturalnym światłem i autentycznymi ustawieniami, dążąc do tworzenia obrazów, które są prawdziwe, piękne i naprawdę odzwierciedlają to, kim jesteś. Obejmuje to fotografię ciążową, noworodkową, dziecięcą i zwierząt domowych, wszystko dostosowane do Twojej wizji.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center gap-10 bg-white p-8 rounded-lg shadow-md" data-aos="fade-right" data-aos-delay="300">
+                        <img src="http://static.photos/event/640x360/16" alt="Fotografia Wydarzeń i Komercyjna" class="w-full md:w-1/3 h-64 object-cover rounded-lg">
+                        <div class="md:w-2/3">
+                            <h3 class="text-3xl font-bold mb-4 text-gray-900">Wydarzenia, Branding i Komercja</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Dla firm i organizacji kluczowe są przekonujące wizualizacje. Oferuję kompleksową obsługę fotograficzną wydarzeń, takich jak konferencje, gale i spotkania firmowe, zapewniając dokumentację każdej ważnej chwili. Dla potrzeb brandingowych i komercyjnych tworzę wysoce efektowne obrazy, które podnoszą prestiż Twojej marki, od fotografii produktów i zdjęć architektury po profesjonalne portrety biznesowe i zdjęcia zespołów, które rezonują z Twoją grupą docelową.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-900" data-aos="fade-up">
+                    Często Zadawane Pytania
+                </h2>
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="border border-gray-200 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                        <div class="accordion-header text-lg font-semibold text-gray-800" tabindex="0" role="button" aria-expanded="false">
+                            <span>Z jakim wyprzedzeniem powinienem/powinnam dokonać rezerwacji?</span>
+                            <i data-feather="chevron-down" class="accordion-icon w-6 h-6 text-gray-600"></i>
+                        </div>
+                        <div class="accordion-content text-gray-700">
+                            <p>W przypadku ślubów zalecam rezerwację z 6-12 miesięcznym wyprzedzeniem, zwłaszcza w szczycie sezonu. Dla portretów i wydarzeń 2-3 miesiące to zazwyczaj wystarczająco, ale zapraszam do kontaktu w przypadku krótszych terminów!</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="border border-gray-200 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                        <div class="accordion-header text-lg font-semibold text-gray-800" tabindex="0" role="button" aria-expanded="false">
+                            <span>Jaki jest Twój styl fotograficzny?</span>
+                            <i data-feather="chevron-down" class="accordion-icon w-6 h-6 text-gray-600"></i>
+                        </div>
+                        <div class="accordion-content text-gray-700">
+                            <p>Mój styl to połączenie artystycznego reportażu i nowoczesnej fotografii artystycznej. Uwielbiam uchwycać spontaniczne, autentyczne chwile, jednocześnie delikatnie kierując do pięknie skomponowanych portretów. Moje podejście do edycji skłania się ku naturalnym, ciepłym tonom z ponadczasowym wyczuciem.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="border border-gray-200 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                        <div class="accordion-header text-lg font-semibold text-gray-800" tabindex="0" role="button" aria-expanded="false">
+                            <span>Czy podróżujesz poza Opole?</span>
+                            <i data-feather="chevron-down" class="accordion-icon w-6 h-6 text-gray-600"></i>
+                        </div>
+                        <div class="accordion-content text-gray-700">
+                            <p>Oczywiście! Chociaż mieszkam w Opolu, jestem dostępny/a do rezerwacji na terenie całej Polski i za granicą. Mogą obowiązywać opłaty za podróż, w zależności od lokalizacji. Proszę o kontakt w celu uzyskania indywidualnej wyceny.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="border border-gray-200 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="400">
+                        <div class="accordion-header text-lg font-semibold text-gray-800" tabindex="0" role="button" aria-expanded="false">
+                            <span>Jak otrzymuję moje zdjęcia?</span>
+                            <i data-feather="chevron-down" class="accordion-icon w-6 h-6 text-gray-600"></i>
+                        </div>
+                        <div class="accordion-content text-gray-700">
+                            <p>Wszystkie zdjęcia dostarczane są za pośrednictwem spersonalizowanej, bezpiecznej galerii online. Z niej możesz przeglądać, pobierać zdjęcia w wysokiej rozdzielczości, udostępniać je znajomym i rodzinie, a nawet zamawiać profesjonalne wydruki bezpośrednio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <div>
+                <h3 class="text-xl font-bold mb-4 text-beige">
+                    [Nazwa Fotografa]
+                </h3>
+                <p class="text-gray-400 leading-relaxed">
+                    Z Opola, Polska, uchwycam chwile, opowiadam historie.
+                </p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4 text-beige">Szybkie Linki</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Strona Główna</a></li>
+                    <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition duration-300">Portfolio</a></li>
+                    <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">O Mnie</a></li>
+                    <li><a href="services.html" class="text-gray-400 hover:text-white transition duration-300">Usługi</a></li>
+                    <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Kontakt</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4 text-beige">Połącz się</h3>
+                <div class="flex justify-center md:justify-start space-x-6">
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Instagram">
+                        <i data-feather="instagram" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Facebook">
+                        <i data-feather="facebook" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="E-mail">
+                        <i data-feather="mail" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-10 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">
+            &copy; 2023 [Nazwa Fotografa]. Wszelkie prawa zastrzeżone.
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            once: true,
+            offset: 50,
+        });
+        feather.replace();
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuButton.querySelector('i').setAttribute('data-feather', mobileMenu.classList.contains('hidden') ? 'menu' : 'x');
+            feather.replace();
+        });
+
+        // Accordion functionality for FAQs
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('.accordion-icon');
+
+                // Close other open accordions
+                document.querySelectorAll('.accordion-header.active').forEach(openHeader => {
+                    if (openHeader !== header) {
+                        openHeader.classList.remove('active');
+                        openHeader.nextElementSibling.classList.remove('active');
+                        openHeader.nextElementSibling.style.maxHeight = 0;
+                        openHeader.querySelector('.accordion-icon').style.transform = 'rotate(0deg)';
+                    }
+                });
+
+                // Toggle current accordion
+                header.classList.toggle('active');
+                content.classList.toggle('active');
+                if (content.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + "px"; // Set max-height to scroll height
+                } else {
+                    content.style.maxHeight = 0;
+                }
+            });
+        });
+
+        // Handle URL parameters for pre-selecting service in contact form
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const serviceParam = urlParams.get('service');
+            if (serviceParam) {
+                // If on this page, maybe highlight or scroll to a service.
+                // For now, this parameter is primarily for passing to the contact page.
+                // We could add a feature here to highlight a service card.
+                const serviceCards = document.querySelectorAll('.service-card'); // Add a class to your service divs
+                serviceCards.forEach(card => {
+                    if (card.dataset.service === serviceParam) {
+                        card.classList.add('border-4', 'border-beige'); // Example highlight
+                        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
