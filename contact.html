@@ -43,7 +43,6 @@
 
 <body class="bg-white text-gray-800 antialiased">
 
-    <!-- Navbar -->
     <nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-sm py-4">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <a href="index.html"
@@ -67,7 +66,6 @@
                 <i data-feather="menu" class="w-7 h-7"></i>
             </button>
         </div>
-        <!-- Mobile Menu -->
         <div id="mobile-menu"
             class="hidden md:hidden absolute top-full left-0 w-full bg-white bg-opacity-95 backdrop-blur-sm shadow-lg py-4 border-t border-gray-100">
             <div class="flex flex-col items-center space-y-4">
@@ -86,7 +84,6 @@
     </nav>
 
     <main class="pt-24">
-        <!-- Contact Hero -->
         <section class="relative bg-gray-900 py-20 md:py-32 text-center text-white overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-700 opacity-90"></div>
             <div class="container mx-auto px-6 relative z-10" data-aos="fade-up" data-aos-duration="1000">
@@ -97,11 +94,9 @@
             </div>
         </section>
 
-        <!-- Contact Info & Map -->
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6 max-w-6xl">
                 <div class="grid grid-cols-1 gap-12 justify-items-center">
-                    <!-- Contact Details -->
                     <div class="p-8 bg-gray-50 rounded-lg shadow-xl w-full max-w-lg" data-aos="fade-up"
                         data-aos-duration="1000">
                         <h2 class="text-4xl font-bold mb-8 text-gray-900 text-center">Moje Dane Kontaktowe</h2>
@@ -139,7 +134,6 @@
                         </div>
                     </div>
 
-                    <!-- Google Map (replaced with image) -->
                     <div class="p-8 bg-gray-50 rounded-lg shadow-xl w-full" data-aos="fade-up" data-aos-duration="1000"
                         data-aos-delay="200">
                         <h3 class="text-3xl font-bold mb-6 text-gray-900 text-center">Znajdź Mnie w Opolu</h3>
@@ -155,7 +149,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
    <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
             <div>
@@ -212,9 +205,6 @@
             mobileMenuButton.querySelector('i').setAttribute('data-feather', mobileMenu.classList.contains('hidden') ? 'menu' : 'x');
             feather.replace();
         });
-
-        // The form and its related JavaScript for handling service parameters and submission are removed.
-        // The remaining DOMContentLoaded listener for serviceParam is also removed as it's no longer relevant.
     </script>
 </body>
 
