@@ -336,34 +336,39 @@
         const filterButtons = document.querySelectorAll('.filter-btn');
         const galleryItems = document.querySelectorAll('.gallery-item');
 
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active-filter', 'bg-beige', 'text-gray-900', 'font-bold'));
-                btn.classList.add('bg-gray-200', 'text-gray-800', 'font-medium');
+        if (filterButtons.length > 0) {
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active-filter', 'bg-beige', 'text-gray-900', 'font-bold', 'bg-gray-200', 'text-gray-800', 'font-medium');
+                    });
 
-                // Add active class to the clicked button
-                button.classList.add('active-filter', 'bg-beige', 'text-gray-900', 'font-bold');
-                button.classList.remove('bg-gray-200', 'text-gray-800', 'font-medium');
+                    // Add active class to the clicked button
+                    button.classList.add('active-filter', 'bg-beige', 'text-gray-900', 'font-bold');
+                    button.classList.remove('bg-gray-200', 'text-gray-800', 'font-medium');
 
-                const filter = button.dataset.filter;
+                    const filter = button.dataset.filter;
 
-                galleryItems.forEach(item => {
-                    if (filter === 'all' || item.dataset.category === filter) {
-                        item.style.display = 'block';
-                        setTimeout(() => item.classList.remove('opacity-0', 'scale-95'), 10); // Re-show with animation
-                        item.classList.add('opacity-100', 'scale-100');
-                    } else {
-                        item.classList.remove('opacity-100', 'scale-100');
-                        item.classList.add('opacity-0', 'scale-95');
-                        setTimeout(() => item.style.display = 'none', 300); // Hide after animation
-                    }
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.dataset.category === filter) {
+                            // Show item (use empty string to allow CSS to control display or default block)
+                            item.style.display = '';
+                            setTimeout(() => item.classList.remove('opacity-0', 'scale-95'), 10); // Re-show with animation
+                            item.classList.add('opacity-100', 'scale-100');
+                        } else {
+                            item.classList.remove('opacity-100', 'scale-100');
+                            item.classList.add('opacity-0', 'scale-95');
+                            setTimeout(() => item.style.display = 'none', 300); // Hide after animation
+                        }
+                    });
                 });
             });
-        });
 
-        // Initialize active filter button on load
-        document.querySelector('.filter-btn[data-filter="all"]').click(); // Simulate click on 'All' button
+            // Initialize active filter button on load (prefer "all" if present, otherwise first button)
+            const initialButton = document.querySelector('.filter-btn[data-filter="all"]') || filterButtons[0];
+            if (initialButton) initialButton.click();
+        }
 
         // Lightbox functionality
         const lightbox = document.getElementById('lightbox');
