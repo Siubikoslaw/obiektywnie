@@ -133,102 +133,106 @@
         <!-- Portfolio Gallery -->
         <section class="py-16 bg-white">
             <div class="container mx-auto px-6">
-                <!-- Filter Buttons -->
-                <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="200">
-                    <button class="filter-btn bg-gray-200 text-gray-800 px-6 py-2 rounded-full font-medium hover:bg-beige hover:text-gray-900 transition duration-300 active-filter" data-filter="all">Wszystkie</button>
-                    <button class="filter-btn bg-gray-200 text-gray-800 px-6 py-2 rounded-full font-medium hover:bg-beige hover:text-gray-900 transition duration-300" data-filter="weddings">Śluby</button>
-                    <button class="filter-btn bg-gray-200 text-gray-800 px-6 py-2 rounded-full font-medium hover:bg-beige hover:text-gray-900 transition duration-300" data-filter="portraits">Portrety</button>
-                    <button class="filter-btn bg-gray-200 text-gray-800 px-6 py-2 rounded-full font-medium hover:bg-beige hover:text-gray-900 transition duration-300" data-filter="events">Wydarzenia</button>
-                    <button class="filter-btn bg-gray-200 text-gray-800 px-6 py-2 rounded-full font-medium hover:bg-beige hover:text-gray-900 transition duration-300" data-filter="landscape">Krajobrazy</button>
-                    <button class="filter-btn bg-gray-200 text-gray-800 px-6 py-2 rounded-full font-medium hover:bg-beige hover:text-gray-900 transition duration-300" data-filter="product">Produkty</button>
+            <!-- Gallery Grid -->
+            <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Wedding Photos -->
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="weddings" data-aos="zoom-in" data-aos-delay="100">
+                <img src="zdjecie.png" alt="Zdjęcie Ślubne 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
+                </div>
+                </div>
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="weddings" data-aos="zoom-in" data-aos-delay="150">
+                <img src="zdjecie.png" alt="Zdjęcie Ślubne 2" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
+                </div>
+                </div>
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="weddings" data-aos="zoom-in" data-aos-delay="200">
+                <img src="zdjecie.png" alt="Zdjęcie Ślubne 3" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
+                </div>
                 </div>
 
-                <!-- Gallery Grid -->
-                <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Wedding Photos -->
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="weddings" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="zdjecie.png" alt="Zdjęcie Ślubne 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="weddings" data-aos="zoom-in" data-aos-delay="150">
-                        <img src="zdjecie.png" alt="Zdjęcie Ślubne 2" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="weddings" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="zdjecie.png" alt="Zdjęcie Ślubne 3" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                        </div>
-                    </div>
+                <!-- Portrait Photos -->
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="portraits" data-aos="zoom-in" data-aos-delay="250">
+                <img src="zdjecie.png" alt="Zdjęcie Portretowe 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
+                </div>
+                </div>
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="portraits" data-aos="zoom-in" data-aos-delay="300">
+                <img src="zdjecie.png" alt="Zdjęcie Portretowe 2" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
+                </div>
+                </div>
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="portraits" data-aos="zoom-in" data-aos-delay="350">
+                <img src="zdjecie.png" alt="Zdjęcie Portretowe 3" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
+                </div>
+                </div>
 
-                    <!-- Portrait Photos -->
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="portraits" data-aos="zoom-in" data-aos-delay="250">
-                        <img src="zdjecie.png" alt="Zdjęcie Portretowe 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="portraits" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="zdjecie.png" alt="Zdjęcie Portretowe 2" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="portraits" data-aos="zoom-in" data-aos-delay="350">
-                        <img src="zdjecie.png" alt="Zdjęcie Portretowe 3" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                        </div>
-                    </div>
+                <!-- Event Photos -->
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="events" data-aos="zoom-in" data-aos-delay="400">
+                <img src="zdjecie.png" alt="Zdjęcie z Wydarzenia 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
+                </div>
+                </div>
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="events" data-aos="zoom-in" data-aos-delay="450">
+                <img src="zdjecie.png" alt="Zdjęcie z Wydarzenia 2" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
+                </div>
+                </div>
 
-                    <!-- Event Photos -->
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="events" data-aos="zoom-in" data-aos-delay="400">
-                        <img src="zdjecie.png" alt="Zdjęcie z Wydarzenia 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="events" data-aos="zoom-in" data-aos-delay="450">
-                        <img src="zdjecie.png" alt="Zdjęcie z Wydarzenia 2" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                        </div>
-                    </div>
+                <!-- Landscape Photos -->
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="landscape" data-aos="zoom-in" data-aos-delay="500">
+                <img src="zdjecie.png" alt="Zdjęcie Krajobrazowe 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
+                </div>
+                </div>
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="landscape" data-aos="zoom-in" data-aos-delay="550">
+                <img src="zdjecie.png" alt="Zdjęcie Krajobrazowe 2" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
+                </div>
+                </div>
 
-                    <!-- Landscape Photos -->
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="landscape" data-aos="zoom-in" data-aos-delay="500">
-                        <img src="zdjecie.png" alt="Zdjęcie Krajobrazowe 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="landscape" data-aos="zoom-in" data-aos-delay="550">
-                        <img src="zdjecie.png" alt="Zdjęcie Krajobrazowe 2" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                        </div>
-                    </div>
-
-                    <!-- Product Photos -->
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="product" data-aos="zoom-in" data-aos-delay="600">
-                        <img src="zdjecie.png" alt="Zdjęcie Produktowe 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="product" data-aos="zoom-in" data-aos-delay="650">
-                        <img src="zdjecie.png" alt="Zdjęcie Produktowe 2" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                        </div>
-                    </div>
+                <!-- Product Photos -->
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="product" data-aos="zoom-in" data-aos-delay="600">
+                <img src="zdjecie.png" alt="Zdjęcie Produktowe 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
+                </div>
+                </div>
+                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="product" data-aos="zoom-in" data-aos-delay="650">
+                <img src="zdjecie.png" alt="Zdjęcie Produktowe 2" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" onclick="openLightbox(this)">
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
+                </div>
                 </div>
             </div>
+            </div>
         </section>
+
+        <script>
+            function openLightbox(image) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt;
+            lightboxCaption.textContent = image.alt; // Use alt text as caption
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            }
+        </script>
     </main>
 
     <!-- Lightbox Overlay -->
