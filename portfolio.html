@@ -370,34 +370,8 @@
             if (initialButton) initialButton.click();
         }
 
-        // Lightbox functionality
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImage = document.getElementById('lightbox-image');
-        const lightboxCaption = document.getElementById('lightbox-caption');
-        const lightboxCloseButton = document.getElementById('lightbox-close-button');
-
-        galleryItems.forEach(item => {
-            const img = item.querySelector('img');
-            img.addEventListener('click', () => {
-                lightboxImage.src = img.src;
-                lightboxImage.alt = img.alt;
-                lightboxCaption.textContent = img.alt; // Use alt text as caption
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-            });
-        });
-
-        lightboxCloseButton.addEventListener('click', () => {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = ''; // Restore scrolling
-        });
-
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) { // Close if clicked outside the image
-                lightbox.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
+        // Lightbox is handled by the openLightbox(image) function defined above;
+        // remove duplicate global listeners to avoid conflicts and ensure clicks use the onclick handlers.
 
         // Handle URL parameters for initial filtering
         document.addEventListener('DOMContentLoaded', () => {
