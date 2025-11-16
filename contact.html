@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,31 +12,55 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@300;400;500;600&display=swap');
+
         body {
             font-family: 'Raleway', sans-serif;
             color: #333;
         }
-        h1, h2, h3, h4, h5, h6 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Playfair Display', serif;
         }
-        .text-beige { color: #F5E6D3; }
-        .bg-beige { background-color: #F5E6D3; }
-        .border-beige { border-color: #F5E6D3; }
+
+        .text-beige {
+            color: #F5E6D3;
+        }
+
+        .bg-beige {
+            background-color: #F5E6D3;
+        }
+
+        .border-beige {
+            border-color: #F5E6D3;
+        }
     </style>
 </head>
+
 <body class="bg-white text-gray-800 antialiased">
 
     <!-- Navbar -->
     <nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-sm py-4">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold tracking-wider uppercase text-gray-900 hover:text-gray-700 transition duration-300">
+            <a href="index.html"
+                class="text-2xl font-bold tracking-wider uppercase text-gray-900 hover:text-gray-700 transition duration-300">
                 [Photographer Name]
             </a>
             <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Strona Główna</a>
-                <a href="portfolio.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Portfolio</a>
-                <a href="about.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">O Mnie</a>
-                <a href="services.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Usługi</a>
+                <a href="index.html"
+                    class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Strona
+                    Główna</a>
+                <a href="portfolio.html"
+                    class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Portfolio</a>
+                <a href="about.html"
+                    class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">O
+                    Mnie</a>
+                <a href="services.html"
+                    class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Usługi</a>
                 <a href="contact.html" class="text-gray-900 font-bold transition duration-300 tracking-wide">Kontakt</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-gray-900 transition duration-300">
@@ -43,12 +68,18 @@
             </button>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white bg-opacity-95 backdrop-blur-sm shadow-lg py-4 border-t border-gray-100">
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-full left-0 w-full bg-white bg-opacity-95 backdrop-blur-sm shadow-lg py-4 border-t border-gray-100">
             <div class="flex flex-col items-center space-y-4">
-                <a href="index.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Strona Główna</a>
-                <a href="portfolio.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Portfolio</a>
-                <a href="about.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">O Mnie</a>
-                <a href="services.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Usługi</a>
+                <a href="index.html"
+                    class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Strona
+                    Główna</a>
+                <a href="portfolio.html"
+                    class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Portfolio</a>
+                <a href="about.html"
+                    class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">O Mnie</a>
+                <a href="services.html"
+                    class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Usługi</a>
                 <a href="contact.html" class="text-gray-900 font-bold text-lg">Kontakt</a>
             </div>
         </div>
@@ -71,12 +102,14 @@
             <div class="container mx-auto px-6 max-w-6xl">
                 <div class="grid grid-cols-1 gap-12 justify-items-center">
                     <!-- Contact Details -->
-                    <div class="p-8 bg-gray-50 rounded-lg shadow-xl w-full max-w-lg" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="p-8 bg-gray-50 rounded-lg shadow-xl w-full max-w-lg" data-aos="fade-up"
+                        data-aos-duration="1000">
                         <h2 class="text-4xl font-bold mb-8 text-gray-900 text-center">Moje Dane Kontaktowe</h2>
                         <div class="space-y-6 text-lg text-gray-700 text-center">
                             <p class="flex items-center justify-center">
                                 <i data-feather="mail" class="w-6 h-6 text-beige mr-4 flex-shrink-0"></i>
-                                <a href="mailto:info@photographername.com" class="hover:underline">info@photographername.com</a>
+                                <a href="mailto:info@photographername.com"
+                                    class="hover:underline">info@photographername.com</a>
                             </p>
                             <p class="flex items-center justify-center">
                                 <i data-feather="phone" class="w-6 h-6 text-beige mr-4 flex-shrink-0"></i>
@@ -87,13 +120,19 @@
                                 <span>Opole, Polska</span>
                             </p>
                             <div class="flex space-x-6 pt-4 justify-center">
-                                <a href="#" target="_blank" class="text-gray-700 hover:text-gray-900 transition duration-300" aria-label="Instagram">
+                                <a href="#" target="_blank"
+                                    class="text-gray-700 hover:text-gray-900 transition duration-300"
+                                    aria-label="Instagram">
                                     <i data-feather="instagram" class="w-8 h-8"></i>
                                 </a>
-                                <a href="#" target="_blank" class="text-gray-700 hover:text-gray-900 transition duration-300" aria-label="Facebook">
+                                <a href="#" target="_blank"
+                                    class="text-gray-700 hover:text-gray-900 transition duration-300"
+                                    aria-label="Facebook">
                                     <i data-feather="facebook" class="w-8 h-8"></i>
                                 </a>
-                                <a href="#" target="_blank" class="text-gray-700 hover:text-gray-900 transition duration-300" aria-label="E-mail">
+                                <a href="#" target="_blank"
+                                    class="text-gray-700 hover:text-gray-900 transition duration-300"
+                                    aria-label="E-mail">
                                     <i data-feather="mail" class="w-8 h-8"></i>
                                 </a>
                             </div>
@@ -101,10 +140,15 @@
                     </div>
 
                     <!-- Google Map (replaced with image) -->
-                    <div class="p-8 bg-gray-50 rounded-lg shadow-xl w-full" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="p-8 bg-gray-50 rounded-lg shadow-xl w-full" data-aos="fade-up" data-aos-duration="1000"
+                        data-aos-delay="200">
                         <h3 class="text-3xl font-bold mb-6 text-gray-900 text-center">Znajdź Mnie w Opolu</h3>
                         <div class="relative overflow-hidden rounded-lg" style="padding-top: 56.25%;">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80902.7822190194!2d17.823893994905426!3d50.678890783582816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47105306456db34b%3A0x25c66487400c346e!2sOpole!5e0!3m2!1spl!2spl!4v1763312716430!5m2!1spl!2spl" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80902.7822190194!2d17.823893994905426!3d50.678890783582816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47105306456db34b%3A0x25c66487400c346e!2sOpole!5e0!3m2!1spl!2spl!4v1763312716430!5m2!1spl!2spl"
+                                width="800" height="600" style="border:0;" allowfullscreen="true" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -125,23 +169,31 @@
             <div>
                 <h3 class="text-xl font-bold mb-4 text-beige">Szybkie Linki</h3>
                 <ul class="space-y-2">
-                    <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Strona Główna</a></li>
-                    <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition duration-300">Portfolio</a></li>
-                    <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">O Mnie</a></li>
-                    <li><a href="services.html" class="text-gray-400 hover:text-white transition duration-300">Usługi</a></li>
-                    <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Kontakt</a></li>
+                    <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Strona
+                            Główna</a></li>
+                    <li><a href="portfolio.html"
+                            class="text-gray-400 hover:text-white transition duration-300">Portfolio</a></li>
+                    <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">O Mnie</a>
+                    </li>
+                    <li><a href="services.html"
+                            class="text-gray-400 hover:text-white transition duration-300">Usługi</a></li>
+                    <li><a href="contact.html"
+                            class="text-gray-400 hover:text-white transition duration-300">Kontakt</a></li>
                 </ul>
             </div>
             <div>
                 <h3 class="text-xl font-bold mb-4 text-beige">Połącz się</h3>
                 <div class="flex justify-center md:justify-start space-x-6">
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Instagram">
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300"
+                        aria-label="Instagram">
                         <i data-feather="instagram" class="w-6 h-6"></i>
                     </a>
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Facebook">
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300"
+                        aria-label="Facebook">
                         <i data-feather="facebook" class="w-6 h-6"></i>
                     </a>
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="E-mail">
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300"
+                        aria-label="E-mail">
                         <i data-feather="mail" class="w-6 h-6"></i>
                     </a>
                 </div>
@@ -172,4 +224,5 @@
         // The remaining DOMContentLoaded listener for serviceParam is also removed as it's no longer relevant.
     </script>
 </body>
+
 </html>
