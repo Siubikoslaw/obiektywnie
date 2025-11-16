@@ -2,300 +2,223 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Fotograf - Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Coloramos</title>
+
+    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- STYLES -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@300;400;500;600&display=swap');
-        body { font-family: 'Raleway', sans-serif; color: #333; }
-        h1,h2,h3,h4,h5,h6 { font-family: 'Playfair Display', serif; }
-        .text-beige { color: #F5E6D3; }
-        .bg-beige { background-color: #F5E6D3; }
-        .border-beige { border-color: #F5E6D3; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+        }
+
+        /* Header */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: white;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 25px;
+            font-size: 18px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                right: 20px;
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+            .menu.active {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+
+        /* Gallery */
+        .gallery-section {
+            max-width: 1000px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
 
         /* Lightbox */
-        .lightbox-overlay {
+        .lightbox {
             position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,.9);
-            display: flex;
-            align-items: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
             justify-content: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity .25s ease, visibility .25s ease;
+            align-items: center;
+            background: rgba(0,0,0,0.8);
+            z-index: 9999;
+            padding: 20px;
         }
-        .lightbox-overlay.active { opacity: 1; visibility: visible; }
-        .lightbox-content {
-            position: relative;
-            max-width: 92%;
-            max-height: 90%;
-            display:flex;
-            flex-direction: column;
-            align-items:center;
+
+        .lightbox.active {
+            display: flex;
         }
-        .lightbox-image {
-            max-width: 100%;
-            max-height: 80vh;
-            object-fit: contain;
-            border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0,0,0,.6);
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
         }
+
         .lightbox-close {
             position: absolute;
-            top: -32px;
-            right: -32px;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
             color: white;
-            font-size: 2.4rem;
             cursor: pointer;
-            line-height: 1;
         }
-        @media (max-width: 768px) {
-            .lightbox-close {
-                top: 10px;
-                right: 10px;
-                background-color: rgba(0,0,0,.45);
-                border-radius: 999px;
-                width: 40px;
-                height: 40px;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                font-size: 1.4rem;
-            }
-        }
-        .lightbox-caption { color: white; margin-top: 0.75rem; text-align:center; font-size:1.05rem; }
     </style>
 </head>
-<body class="bg-white text-gray-800 antialiased">
 
-    <!-- Navbar -->
-    <nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-sm py-4">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold tracking-wider uppercase text-gray-900 hover:text-gray-700 transition duration-300">Obiektywnie</a>
+<body>
 
-            <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Strona Główna</a>
-                <a href="portfolio.html" class="text-gray-900 font-bold transition duration-300 tracking-wide">Portfolio</a>
-                <a href="about.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">O Mnie</a>
-                <a href="services.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Usługi</a>
-                <a href="contact.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Kontakt</a>
-            </div>
-
-            <!-- Simple mobile button (no feather toggle race) -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-gray-900 transition duration-300 text-2xl leading-none" aria-expanded="false" aria-controls="mobile-menu">☰</button>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="logo">
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white bg-opacity-95 backdrop-blur-sm shadow-lg py-4 border-t border-gray-100">
-            <div class="flex flex-col items-center space-y-4">
-                <a href="index.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Strona Główna</a>
-                <a href="portfolio.html" class="text-gray-900 font-bold text-lg">Portfolio</a>
-                <a href="about.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">O Mnie</a>
-                <a href="services.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Usługi</a>
-                <a href="contact.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Kontakt</a>
-            </div>
+        <nav class="menu" id="menu">
+            <a href="#realizacje">Realizacje</a>
+            <a href="#opis">O nas</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+            <i data-feather="menu"></i>
         </div>
-    </nav>
+    </header>
 
-    <main class="pt-24">
-        <!-- Hero -->
-        <section class="relative bg-gray-900 py-20 md:py-32 text-center text-white overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-700 opacity-90"></div>
-            <div class="container mx-auto px-6 relative z-10" data-aos="fade-up" data-aos-duration="1000">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4">Moje Portfolio</h1>
-                <p class="text-lg md:text-xl max-w-2xl mx-auto opacity-90">
-                    Wyselekcjonowana kolekcja moich prac, prezentująca różnorodne style i niezapomniane chwile.
-                </p>
-            </div>
-        </section>
+    <!-- GALLERY SECTION -->
+    <section class="gallery-section" id="realizacje">
+        <h2 data-aos="fade-up">Nasze realizacje</h2>
 
-        <!-- Gallery -->
-        <section class="py-16 bg-white">
-            <div class="container mx-auto px-6">
-                <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Sample gallery items - replace zdjecie.png with real paths -->
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="weddings" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="zdjecie.png" alt="Zdjęcie Ślubne 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" />
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="portraits" data-aos="zoom-in" data-aos-delay="150">
-                        <img src="zdjecie.png" alt="Zdjęcie Portretowe 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" />
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="landscape" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="zdjecie.png" alt="Zdjęcie Krajobrazowe 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" />
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                        </div>
-                    </div>
-
-                    <!-- duplicate more items to fill grid -->
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="product" data-aos="zoom-in" data-aos-delay="250">
-                        <img src="zdjecie.png" alt="Zdjęcie Produktowe 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" />
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="events" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="zdjecie.png" alt="Zdjęcie z Wydarzenia 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" />
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-category="portraits" data-aos="zoom-in" data-aos-delay="350">
-                        <img src="zdjecie.png" alt="Zdjęcie Portretowe 2" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" />
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <i data-feather="zoom-in" class="text-white w-10 h-10"></i>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Lightbox Overlay -->
-        <div id="lightbox" class="lightbox-overlay" aria-hidden="true">
-            <div class="lightbox-content" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
-                <button id="lightbox-close-button" class="lightbox-close" aria-label="Zamknij">&times;</button>
-                <img id="lightbox-image" class="lightbox-image" src="" alt="">
-                <p id="lightbox-caption" class="lightbox-caption"></p>
-            </div>
+        <div class="gallery" id="gallery">
+            <!-- CHANGE THESE TO YOUR IMAGES -->
+            <img src="https://via.placeholder.com/800x600" alt="Zdjęcie 1">
+            <img src="https://via.placeholder.com/800x600" alt="Zdjęcie 2">
+            <img src="https://via.placeholder.com/800x600" alt="Zdjęcie 3">
+            <img src="https://via.placeholder.com/800x600" alt="Zdjęcie 4">
         </div>
+    </section>
 
-    </main>
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="">
+    </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-            <div>
-                <h3 class="text-xl font-bold mb-4 text-beige">Obiektywnie</h3>
-                <p class="text-gray-400 leading-relaxed">Z Opola, uchwycam chwile, opowiadam historie.</p>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold mb-4 text-beige">Szybkie Linki</h3>
-                <ul class="space-y-2">
-                    <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Strona Główna</a></li>
-                    <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition duration-300">Portfolio</a></li>
-                    <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">O Mnie</a></li>
-                    <li><a href="services.html" class="text-gray-400 hover:text-white transition duration-300">Usługi</a></li>
-                    <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Kontakt</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold mb-4 text-beige">Połącz się</h3>
-                <div class="flex justify-center md:justify-start space-x-6">
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Instagram"><i data-feather="instagram" class="w-6 h-6"></i></a>
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Facebook"><i data-feather="facebook" class="w-6 h-6"></i></a>
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="E-mail"><i data-feather="mail" class="w-6 h-6"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="mt-10 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">&copy; 2025 Obiektywnie. Wszelkie prawa zastrzeżone.</div>
-    </footer>
+    <!-- AOS + Feather Icons -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
 
+    <!-- SCRIPT -->
     <script>
-        // Init AOS and feather icons after DOM ready
-        document.addEventListener('DOMContentLoaded', function () {
-            if (window.AOS) AOS.init({ once: true, offset: 50 });
-            if (window.feather) feather.replace();
+        AOS.init();
+        feather.replace();
+
+        const hamburger = document.getElementById("hamburger");
+        const menu = document.getElementById("menu");
+
+        hamburger.addEventListener("click", () => {
+            menu.classList.toggle("active");
         });
 
-        // Mobile menu toggle (simple text toggle to avoid icon replacement race)
-        (function () {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (!mobileMenuButton || !mobileMenu) return;
+        /* LIGHTBOX */
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const lightboxClose = document.getElementById("lightbox-close");
 
-            mobileMenuButton.addEventListener('click', () => {
-                const isHidden = mobileMenu.classList.contains('hidden');
-                if (isHidden) {
-                    mobileMenu.classList.remove('hidden');
-                    mobileMenuButton.textContent = '✕';
-                    mobileMenuButton.setAttribute('aria-expanded', 'true');
-                } else {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenuButton.textContent = '☰';
-                    mobileMenuButton.setAttribute('aria-expanded', 'false');
-                }
-            });
-        })();
-
-        // Single, robust lightbox: openLightbox by event delegation
-        (function () {
-            const gallery = document.getElementById('gallery');
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImage = document.getElementById('lightbox-image');
-            const lightboxCaption = document.getElementById('lightbox-caption');
-            const closeBtn = document.getElementById('lightbox-close-button');
-
-            if (!gallery || !lightbox || !lightboxImage) return;
-
-            // Open lightbox when an <img> inside gallery is clicked
-            gallery.addEventListener('click', function (e) {
-                const el = e.target;
-                if (el && el.tagName === 'IMG') {
-                    openLightbox(el);
-                }
-            });
-
-            // Centralized open function
-            function openLightbox(imgEl) {
-                lightboxImage.src = imgEl.src;
-                lightboxImage.alt = imgEl.alt || '';
-                lightboxCaption.textContent = imgEl.alt || '';
-                lightbox.classList.add('active');
-                lightbox.setAttribute('aria-hidden', 'false');
-                // prevent background scroll
-                document.documentElement.style.overflow = 'hidden';
-                document.body.style.overflow = 'hidden';
-                // attach listeners for close
-                document.addEventListener('keydown', onKeyDown);
-                lightbox.addEventListener('click', onOverlayClick);
+        document.getElementById("gallery").addEventListener("click", (e) => {
+            if (e.target.tagName === "IMG") {
+                lightboxImg.src = e.target.src;
+                lightbox.classList.add("active");
+                document.body.style.overflow = "hidden";
             }
+        });
 
-            function closeLightbox() {
-                lightbox.classList.remove('active');
-                lightbox.setAttribute('aria-hidden', 'true');
-                // restore scroll
-                document.documentElement.style.overflow = '';
-                document.body.style.overflow = '';
-                // cleanup listeners
-                document.removeEventListener('keydown', onKeyDown);
-                lightbox.removeEventListener('click', onOverlayClick);
-                // clear image (optional)
-                setTimeout(() => {
-                    lightboxImage.src = '';
-                    lightboxImage.alt = '';
-                    lightboxCaption.textContent = '';
-                }, 200);
+        lightboxClose.addEventListener("click", () => {
+            lightbox.classList.remove("active");
+            document.body.style.overflow = "";
+        });
+
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove("active");
+                document.body.style.overflow = "";
             }
+        });
 
-            function onOverlayClick(e) {
-                // close if clicked on overlay (outside content)
-                if (e.target === lightbox) closeLightbox();
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                lightbox.classList.remove("active");
+                document.body.style.overflow = "";
             }
-
-            function onKeyDown(e) {
-                if (e.key === 'Escape' || e.key === 'Esc') closeLightbox();
-            }
-
-            // close button click
-            if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
-        })();
+        });
     </script>
+
 </body>
 </html>
