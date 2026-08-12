@@ -58,6 +58,29 @@
             opacity: 0.5;
             line-height: 1;
         }
+
+        .statement {
+            width: 100%;
+            padding: 90px 40px 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #f5f5f6;
+        }
+
+        .statement p {
+            margin: 0;
+            max-width: 1200px;
+
+            font-family: "Allura", "Brush Script MT", cursive;
+            font-size: clamp(55px, 5.5vw, 105px);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: 0.5px;
+
+            color: #c9a227;
+        }
     </style>
 </head>
 
@@ -189,44 +212,12 @@
 
         <section class="py-20 bg-gray-100">
             <div class="container mx-auto px-6 max-w-6xl">
-                <h2 class="text-4xl font-bold text-center mb-12 text-gray-900" data-aos="fade-up">
-                    Za Obiektywem
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="zoom-in"
-                        data-aos-delay="100">
-                        <img src="zdjecie.png" alt="Kulisowe 1"
-                            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 grayscale group-hover:grayscale-0">
-                        <div
-                            class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <p class="text-white text-lg font-semibold">Staranna Kompozycja</p>
-                        </div>
-                    </div>
-                    <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="zoom-in"
-                        data-aos-delay="200">
-                        <img src="zdjecie.png" alt="Kulisowe 2"
-                            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 grayscale group-hover:grayscale-0">
-                        <div
-                            class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <p class="text-white text-lg font-semibold">Perfekcja Postprodukcji</p>
-                        </div>
-                    </div>
-                    <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="zoom-in"
-                        data-aos-delay="300">
-                        <img src="zdjecie.png" alt="Kulisowe 3"
-                            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 grayscale group-hover:grayscale-0">
-                        <div
-                            class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <p class="text-white text-lg font-semibold">Uchwycanie Autentycznych Emocji</p>
-                        </div>
-                    </div>
-                </div>
-                <p class="text-lg leading-relaxed text-gray-700 text-center max-w-3xl mx-auto" data-aos="fade-up"
-                    data-aos-delay="400">
-                    Każda sesja to wspólna podróż, od początkowej koncepcji po ostateczne dostarczenie. Skrupulatnie
-                    planuję, starannie komponuję i przemyślanie edytuję, aby każde zdjęcie przekroczyło oczekiwania i
-                    odzwierciedlało Twoją unikalną historię.
-                </p>
+                <section class="statement">
+                    <p>
+                        Nie obiecuję Ci idealnych zdjęć.<br>
+                        Obiecuję Ci prawdziwe spotkanie.
+                    </p>
+                </section>
             </div>
         </section>
 
