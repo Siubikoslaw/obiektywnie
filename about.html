@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,16 +12,33 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@300;400;500;600&display=swap');
+
         body {
             font-family: 'Raleway', sans-serif;
             color: #333;
         }
-        h1, h2, h3, h4, h5, h6 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Playfair Display', serif;
         }
-        .text-beige { color: #F5E6D3; }
-        .bg-beige { background-color: #F5E6D3; }
-        .border-beige { border-color: #F5E6D3; }
+
+        .text-beige {
+            color: #F5E6D3;
+        }
+
+        .bg-beige {
+            background-color: #F5E6D3;
+        }
+
+        .border-beige {
+            border-color: #F5E6D3;
+        }
+
         .quote-bubble {
             position: relative;
             background: #f8f8f8;
@@ -28,8 +46,10 @@
             padding: 1.5rem;
             border-radius: 0.5rem;
         }
+
         .quote-bubble::before {
-            content: "\201C"; /* Left double quotation mark */
+            content: "\201C";
+            /* Left double quotation mark */
             position: absolute;
             top: 0.5rem;
             left: 0.5rem;
@@ -40,31 +60,44 @@
         }
     </style>
 </head>
+
 <body class="bg-white text-gray-800 antialiased">
 
     <nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-sm py-4">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold tracking-wider uppercase text-gray-900 hover:text-gray-700 transition duration-300">
+            <a href="index.html"
+                class="text-2xl font-bold tracking-wider uppercase text-gray-900 hover:text-gray-700 transition duration-300">
                 Obiektywnie
             </a>
             <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Strona Główna</a>
-                <a href="portfolio.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Portfolio</a>
+                <a href="index.html"
+                    class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Strona
+                    Główna</a>
+                <a href="portfolio.html"
+                    class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Portfolio</a>
                 <a href="about.html" class="text-gray-900 font-bold transition duration-300 tracking-wide">O Mnie</a>
-                <a href="services.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Usługi</a>
-                <a href="contact.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Kontakt</a>
+                <a href="services.html"
+                    class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Usługi</a>
+                <a href="contact.html"
+                    class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Kontakt</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-gray-900 transition duration-300">
                 <i data-feather="menu" class="w-7 h-7"></i>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white bg-opacity-95 backdrop-blur-sm shadow-lg py-4 border-t border-gray-100">
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-full left-0 w-full bg-white bg-opacity-95 backdrop-blur-sm shadow-lg py-4 border-t border-gray-100">
             <div class="flex flex-col items-center space-y-4">
-                <a href="index.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Strona Główna</a>
-                <a href="portfolio.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Portfolio</a>
+                <a href="index.html"
+                    class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Strona
+                    Główna</a>
+                <a href="portfolio.html"
+                    class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Portfolio</a>
                 <a href="about.html" class="text-gray-900 font-bold text-lg">O Mnie</a>
-                <a href="services.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Usługi</a>
-                <a href="contact.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Kontakt</a>
+                <a href="services.html"
+                    class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Usługi</a>
+                <a href="contact.html"
+                    class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Kontakt</a>
             </div>
         </div>
     </nav>
@@ -84,57 +117,63 @@
             <div class="container mx-auto px-6 max-w-6xl">
                 <div class="flex flex-col md:flex-row items-center gap-12">
                     <div class="md:w-1/2" data-aos="fade-right" data-aos-duration="1000">
-                        <img src="zdjecie.png" alt="Portret Fotografa" class="w-full h-auto object-cover rounded-xl shadow-lg grayscale hover:grayscale-0 transition-all duration-500 ease-in-out">
+                        <img src="zdjecie.png" alt="Portret Fotografa"
+                            class="w-full h-auto object-cover rounded-xl shadow-lg grayscale hover:grayscale-0 transition-all duration-500 ease-in-out">
                     </div>
                     <div class="md:w-1/2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                         <h2 class="text-4xl font-bold mb-6 text-gray-900">
-                            O mnie 
+                            O mnie
                         </h2>
                         <p class="text-lg leading-relaxed text-gray-700 mb-6">
                             Nazywam się Małgorzata Błażejowska-Baklarz
 
-Jestem twórczynią marki Obiektywnie.
+                            Jestem twórczynią marki Obiektywnie.
 
-Od ponad dziesięciu lat spotykam ludzi z aparatem w dłoni, ale z czasem zrozumiałam, że moja praca nigdy nie polegała wyłącznie na fotografowaniu.
+                            Od ponad dziesięciu lat spotykam ludzi z aparatem w dłoni, ale z czasem zrozumiałam, że moja
+                            praca nigdy nie polegała wyłącznie na fotografowaniu.
 
-Polega na zatrzymywaniu historii.
+                            Polega na zatrzymywaniu historii.
 
-Na dostrzeganiu emocji, które często pojawiają się tylko na chwilę.
+                            Na dostrzeganiu emocji, które często pojawiają się tylko na chwilę.
 
-Na tworzeniu przestrzeni, w której człowiek może poczuć się swobodnie i po prostu być sobą.
+                            Na tworzeniu przestrzeni, w której człowiek może poczuć się swobodnie i po prostu być sobą.
 
-Wierzę, że najpiękniejsze fotografie nie powstają wtedy, gdy wszystko jest idealne.
+                            Wierzę, że najpiękniejsze fotografie nie powstają wtedy, gdy wszystko jest idealne.
 
-Powstają wtedy, gdy człowiek czuje się bezpiecznie.
+                            Powstają wtedy, gdy człowiek czuje się bezpiecznie.
 
-Dlatego nie szukam perfekcji.
+                            Dlatego nie szukam perfekcji.
 
-Nie retuszuję życia.
+                            Nie retuszuję życia.
 
-Nie ukrywam piegów, zmarszczek ani emocji.
+                            Nie ukrywam piegów, zmarszczek ani emocji.
 
-To właśnie one tworzą historię.
+                            To właśnie one tworzą historię.
 
-Fotografuję kobiety, rodziny, artystów, tancerzy, kameralne uroczystości i wydarzenia biznesowe.
+                            Fotografuję kobiety, rodziny, artystów, tancerzy, kameralne uroczystości i wydarzenia
+                            biznesowe.
 
-Towarzyszę również ludziom podczas spotkań jogi, masażu i chwil, w których najważniejsza jest uważność oraz obecność.
+                            Towarzyszę również ludziom podczas spotkań jogi, masażu i chwil, w których najważniejsza
+                            jest uważność oraz obecność.
 
-Szczególne miejsce w moim sercu zajmuje portret.
+                            Szczególne miejsce w moim sercu zajmuje portret.
 
-Bo wierzę, że oczy potrafią opowiedzieć więcej niż tysiąc słów.
+                            Bo wierzę, że oczy potrafią opowiedzieć więcej niż tysiąc słów.
 
-Poza fotografią prowadzę warsztaty dla dzieci i dorosłych.
+                            Poza fotografią prowadzę warsztaty dla dzieci i dorosłych.
 
-Dzieci uczę nie tylko fotografii, ale przede wszystkim patrzenia na świat z ciekawością i zachwytem.
+                            Dzieci uczę nie tylko fotografii, ale przede wszystkim patrzenia na świat z ciekawością i
+                            zachwytem.
 
-Dorosłym pokazuję, że fotografia zaczyna się dużo wcześniej niż naciśnięcie spustu migawki.
-Zaczyna się od uważności.
+                            Dorosłym pokazuję, że fotografia zaczyna się dużo wcześniej niż naciśnięcie spustu migawki.
+                            Zaczyna się od uważności.
 
-Marzę o stworzeniu  przestrzeni – miejsca, w którym fotografia spotka się ze sztuką, tańcem, rozmową i ludźmi, którzy chcą tworzyć.
+                            Marzę o stworzeniu przestrzeni – miejsca, w którym fotografia spotka się ze sztuką, tańcem,
+                            rozmową i ludźmi, którzy chcą tworzyć.
 
-Wierze, że każdy człowiek zasługuje na to, by zostać zauważonym.
+                            Wierze, że każdy człowiek zasługuje na to, by zostać zauważonym.
 
-Jeśli czujesz, że właśnie takiego spotkania szukasz, będzie mi bardzo miło Cię poznać.
+                            Jeśli czujesz, że właśnie takiego spotkania szukasz, będzie mi bardzo miło Cię poznać.
 
                         </p>
                     </div>
@@ -148,27 +187,39 @@ Jeśli czujesz, że właśnie takiego spotkania szukasz, będzie mi bardzo miło
                     Za Obiektywem
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="zdjecie.png" alt="Kulisowe 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 grayscale group-hover:grayscale-0">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="zoom-in"
+                        data-aos-delay="100">
+                        <img src="zdjecie.png" alt="Kulisowe 1"
+                            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 grayscale group-hover:grayscale-0">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <p class="text-white text-lg font-semibold">Staranna Kompozycja</p>
                         </div>
                     </div>
-                    <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="zdjecie.png" alt="Kulisowe 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 grayscale group-hover:grayscale-0">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="zoom-in"
+                        data-aos-delay="200">
+                        <img src="zdjecie.png" alt="Kulisowe 2"
+                            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 grayscale group-hover:grayscale-0">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <p class="text-white text-lg font-semibold">Perfekcja Postprodukcji</p>
                         </div>
                     </div>
-                    <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="zdjecie.png" alt="Kulisowe 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 grayscale group-hover:grayscale-0">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="zoom-in"
+                        data-aos-delay="300">
+                        <img src="zdjecie.png" alt="Kulisowe 3"
+                            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 grayscale group-hover:grayscale-0">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <p class="text-white text-lg font-semibold">Uchwycanie Autentycznych Emocji</p>
                         </div>
                     </div>
                 </div>
-                <p class="text-lg leading-relaxed text-gray-700 text-center max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="400">
-                    Każda sesja to wspólna podróż, od początkowej koncepcji po ostateczne dostarczenie. Skrupulatnie planuję, starannie komponuję i przemyślanie edytuję, aby każde zdjęcie przekroczyło oczekiwania i odzwierciedlało Twoją unikalną historię.
+                <p class="text-lg leading-relaxed text-gray-700 text-center max-w-3xl mx-auto" data-aos="fade-up"
+                    data-aos-delay="400">
+                    Każda sesja to wspólna podróż, od początkowej koncepcji po ostateczne dostarczenie. Skrupulatnie
+                    planuję, starannie komponuję i przemyślanie edytuję, aby każde zdjęcie przekroczyło oczekiwania i
+                    odzwierciedlało Twoją unikalną historię.
                 </p>
             </div>
         </section>
@@ -251,7 +302,7 @@ Jeśli czujesz, że właśnie takiego spotkania szukasz, będzie mi bardzo miło
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
             <div>
                 <h3 class="text-xl font-bold mb-4 text-beige">
-                                    Obiektywnie
+                    Obiektywnie
 
                 </h3>
                 <p class="text-gray-400 leading-relaxed">
@@ -261,23 +312,31 @@ Jeśli czujesz, że właśnie takiego spotkania szukasz, będzie mi bardzo miło
             <div>
                 <h3 class="text-xl font-bold mb-4 text-beige">Szybkie Linki</h3>
                 <ul class="space-y-2">
-                    <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Strona Główna</a></li>
-                    <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition duration-300">Portfolio</a></li>
-                    <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">O Mnie</a></li>
-                    <li><a href="services.html" class="text-gray-400 hover:text-white transition duration-300">Usługi</a></li>
-                    <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Kontakt</a></li>
+                    <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Strona
+                            Główna</a></li>
+                    <li><a href="portfolio.html"
+                            class="text-gray-400 hover:text-white transition duration-300">Portfolio</a></li>
+                    <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">O Mnie</a>
+                    </li>
+                    <li><a href="services.html"
+                            class="text-gray-400 hover:text-white transition duration-300">Usługi</a></li>
+                    <li><a href="contact.html"
+                            class="text-gray-400 hover:text-white transition duration-300">Kontakt</a></li>
                 </ul>
             </div>
             <div>
                 <h3 class="text-xl font-bold mb-4 text-beige">Połącz się</h3>
                 <div class="flex justify-center md:justify-start space-x-6">
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Instagram">
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300"
+                        aria-label="Instagram">
                         <i data-feather="instagram" class="w-6 h-6"></i>
                     </a>
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Facebook">
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300"
+                        aria-label="Facebook">
                         <i data-feather="facebook" class="w-6 h-6"></i>
                     </a>
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="E-mail">
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300"
+                        aria-label="E-mail">
                         <i data-feather="mail" class="w-6 h-6"></i>
                     </a>
                 </div>
@@ -287,4 +346,7 @@ Jeśli czujesz, że właśnie takiego spotkania szukasz, będzie mi bardzo miło
             &copy; 2025 Obiektywnie. Wszelkie prawa zastrzeżone.
         </div>
     </footer>
-    <script>        AOS.init({            once: true,            offset: 50,        });        feather.replace();        const mobileMenuButton = document.getElementById('mobile-menu-button');        const mobileMenu = document.getElementById('mobile-menu');        mobileMenuButton.addEventListener('click', () => {            mobileMenu.classList.toggle('hidden');            mobileMenuButton.querySelector('i').setAttribute('data-feather', mobileMenu.classList.contains('hidden') ? 'menu' : 'x');            feather.replace();        });    </script></body></html>
+    <script>        AOS.init({ once: true, offset: 50, }); feather.replace(); const mobileMenuButton = document.getElementById('mobile-menu-button'); const mobileMenu = document.getElementById('mobile-menu'); mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); mobileMenuButton.querySelector('i').setAttribute('data-feather', mobileMenu.classList.contains('hidden') ? 'menu' : 'x'); feather.replace(); });    </script>
+</body>
+
+</html>
