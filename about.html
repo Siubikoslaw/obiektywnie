@@ -12,124 +12,15 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@300;400;500;600&display=swap');
-
-        body {
-            font-family: 'Raleway', sans-serif;
-            color: #333;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: 'Playfair Display', serif;
-        }
-
-        .text-beige {
-            color: #F5E6D3;
-        }
-
-        .bg-beige {
-            background-color: #F5E6D3;
-        }
-
-        .border-beige {
-            border-color: #F5E6D3;
-        }
-
-        .quote-bubble {
-            position: relative;
-            background: #f8f8f8;
-            border-left: 5px solid #F5E6D3;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-        }
-
-        .quote-bubble::before {
-            content: "\201C";
-            /* Left double quotation mark */
-            position: absolute;
-            top: 0.5rem;
-            left: 0.5rem;
-            font-size: 4rem;
-            color: #ccc;
-            opacity: 0.5;
-            line-height: 1;
-        }
-
-        .statement {
-            width: 100%;
-            padding: 90px 40px 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: #f5f5f6;
-        }
-
-        .statement p {
-            margin: 0;
-            max-width: 1200px;
-
-            font-family: "Allura", "Brush Script MT", cursive;
-            font-size: clamp(55px, 5.5vw, 105px);
-            font-weight: 400;
-            line-height: 1.15;
-            letter-spacing: 0.5px;
-
-            color: #c9a227;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-white text-gray-800 antialiased">
 
-    <nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-sm py-4">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="index.html"
-                class="text-2xl font-bold tracking-wider uppercase text-gray-900 hover:text-gray-700 transition duration-300">
-                Obiektywnie
-            </a>
-            <div class="hidden md:flex space-x-8">
-                <a href="index.html"
-                    class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Strona
-                    Główna</a>
-                <a href="portfolio.html"
-                    class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Portfolio</a>
-                <a href="about.html" class="text-gray-900 font-bold transition duration-300 tracking-wide">O Mnie</a>
-                <a href="services.html"
-                    class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Usługi</a>
-                <a href="contact.html"
-                    class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide">Kontakt</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-gray-900 transition duration-300">
-                <i data-feather="menu" class="w-7 h-7"></i>
-            </button>
-        </div>
-        <div id="mobile-menu"
-            class="hidden md:hidden absolute top-full left-0 w-full bg-white bg-opacity-95 backdrop-blur-sm shadow-lg py-4 border-t border-gray-100">
-            <div class="flex flex-col items-center space-y-4">
-                <a href="index.html"
-                    class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Strona
-                    Główna</a>
-                <a href="portfolio.html"
-                    class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Portfolio</a>
-                <a href="about.html" class="text-gray-900 font-bold text-lg">O Mnie</a>
-                <a href="services.html"
-                    class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Usługi</a>
-                <a href="contact.html"
-                    class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Kontakt</a>
-            </div>
-        </div>
-    </nav>
+    <div id="header-placeholder"></div>
 
-    <main class="pt-24">
-        <section class="relative bg-gray-900 py-20 md:py-32 text-center text-white overflow-hidden">
+    <main>
+        <section class="hero-full bg-gray-900 text-white">
             <div class="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-700 opacity-90"></div>
             <div class="container mx-auto px-6 relative z-10" data-aos="fade-up" data-aos-duration="1000">
                 <h1 class="text-4xl md:text-6xl font-bold mb-4">Moja Historia</h1>
@@ -205,9 +96,6 @@
                             Wierze, że każdy człowiek zasługuje na to, by zostać zauważonym.
 
                             Jeśli czujesz, że właśnie takiego spotkania szukasz, <b>będzie mi bardzo miło Cię poznać</b>.</p>
-
-
-                        </p>
                     </div>
                 </div>
             </div>
@@ -224,49 +112,7 @@
             </div>
         </section>
 
-        <!-- <section class="py-20 bg-gray-100">
-            <div class="container mx-auto px-6 max-w-6xl">
-                <h2 class="text-4xl font-bold text-center mb-12 text-gray-900" data-aos="fade-up">
-                    Co Mówią Moi Klienci
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="quote-bubble" data-aos="fade-up" data-aos-delay="100">
-                        <p class="text-gray-700 italic mb-4 relative z-10">
-                            "[Nazwa Fotografa] uchwycił/a nasz dzień ślubu z taką gracją i artyzmem. Każde zdjęcie opowiada historię, pięknie zachowując emocje i radość. Nie mogliśmy być bardziej zadowoleni z rezultatów – to prawdziwe arcydzieła!"
-                        </p>
-                        <p class="font-semibold text-gray-800 text-right">- Anna i Jakub K., Opole</p>
-                    </div>
-                    <div class="quote-bubble" data-aos="fade-up" data-aos-delay="200">
-                        <p class="text-gray-700 italic mb-4 relative z-10">
-                            "Sesja portretowa była absolutną przyjemnością! [Nazwa Fotografa] sprawił/a, że czułem/am się tak komfortowo i naprawdę wydobył/a moją osobowość. Zdjęcia są oszałamiające i dokładnie takie, jak sobie wyobrażałem/am. Gorąco polecam!"
-                        </p>
-                        <p class="font-semibold text-gray-800 text-right">- Maria S., Wrocław</p>
-                    </div>
-                    <div class="quote-bubble" data-aos="fade-up" data-aos-delay="300">
-                        <p class="text-gray-700 italic mb-4 relative z-10">
-                            "Współpraca z [Nazwa Fotografa] przy wprowadzaniu naszego produktu na rynek przebiegła bezproblemowo. Dbałość o szczegóły i kreatywna wizja zaowocowały zdjęciami, które doskonale zaprezentowały naszą markę. Profesjonalna i wyjątkowa jakość."
-                        </p>
-                        <p class="font-semibold text-gray-800 text-right">- CEO, [Nazwa Firmy]</p>
-                    </div>
-                    <div class="quote-bubble" data-aos="fade-up" data-aos-delay="400">
-                        <p class="text-gray-700 italic mb-4 relative z-10">
-                        <p class="text-gray-700 italic mb-4 relative z-10">
-                            "Współpraca z [Nazwa Fotografa] przy wprowadzaniu naszego produktu na rynek przebiegła bezproblemowo. Dbałość o szczegóły i kreatywna wizja zaowocowały zdjęciami, które doskonale zaprezentowały naszą markę. Profesjonalna i wyjątkowa jakość."
-                        </p>
-                        <p class="font-semibold text-gray-800 text-right">- CEO, [Nazwa Firmy]</p>
-                    </div>
-                    <div class="quote-bubble" data-aos="fade-up" data-aos-delay="400">
-                        <p class="text-gray-700 italic mb-4 relative z-10">
-                            "Moje oczekiwania wobec fotografii krajobrazowej zostały przekroczone. [Nazwa Fotografa] uchwycił/a nie tylko piękno natury, ale także jej duszę. Odbitki są zapierające dech w piersiach!"
-                        </p>
-                        <p class="font-semibold text-gray-800 text-right">- Tomasz P., Pasjonat Fotografii</p>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-        <!-- CTA Section -->
-        <!-- <section class="bg-gray-900 py-20 text-center text-white">
+        <section class="bg-gray-900 py-20 text-center text-white">
             <div class="container mx-auto px-6" data-aos="fade-up" data-aos-duration="1000">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6">Stwórzmy Twoje Dziedzictwo</h2>
                 <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 opacity-80">
@@ -276,77 +122,12 @@
                     Skontaktuj Się Ze Mną
                 </a>
             </div>
-                            "Moje oczekiwania wobec fotografii krajobrazowej zostały przekroczone. [Nazwa Fotografa] uchwycił/a nie tylko piękno natury, ale także jej duszę. Odbitki są zapierające dech w piersiach!"
-                        </p>
-                        <p class="font-semibold text-gray-800 text-right">- Tomasz P., Pasjonat Fotografii</p>
-                    </div>
-                </div>-800 text-white py-12">
-            </div>center md:text-left">
         </section>
+    </main>
 
-        <section class="bg-gray-900 py-20 text-center text-white">        Obiektywnie
-            <div class="container mx-auto px-6" data-aos="fade-up" data-aos-duration="1000">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">Stwórzmy Twoje Dziedzictwo</h2>
-                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 opacity-80">ss="text-gray-400 leading-relaxed">
-                    Z Opola, uchwycam chwile, opowiadam historie.
-                    Gotowy/a, aby opowiedzieć swoją unikalną historię poprzez urzekające zdjęcia?p>
-                </p>
-                <a href="contact.html" class="bg-beige text-gray-900 px-10 py-4 rounded-full text-xl font-semibold hover:bg-opacity-90 transform hover:scale-105 transition duration-300 shadow-lg">            <div>
-                <h3 class="text-xl font-bold mb-4 text-beige">Szybkie Linki</h3>
-                    Skontaktuj Się Ze Mnąpace-y-2">
-                </a>hover:text-white transition duration-300">Strona Główna</a></li>
-            </div>ition duration-300">Portfolio</a></li>
-        </section>uration-300">O Mnie</a></li> -->
-    </main></a></li>
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-            <div>
-                <h3 class="text-xl font-bold mb-4 text-beige">
-                    Obiektywnie
+    <div id="footer-placeholder"></div>
 
-                </h3>
-                <p class="text-gray-400 leading-relaxed">
-                    Z Opola, uchwycam chwile, opowiadam historie.
-                </p>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold mb-4 text-beige">Szybkie Linki</h3>
-                <ul class="space-y-2">
-                    <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Strona
-                            Główna</a></li>
-                    <li><a href="portfolio.html"
-                            class="text-gray-400 hover:text-white transition duration-300">Portfolio</a></li>
-                    <li><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">O Mnie</a>
-                    </li>
-                    <li><a href="services.html"
-                            class="text-gray-400 hover:text-white transition duration-300">Usługi</a></li>
-                    <li><a href="contact.html"
-                            class="text-gray-400 hover:text-white transition duration-300">Kontakt</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold mb-4 text-beige">Połącz się</h3>
-                <div class="flex justify-center md:justify-start space-x-6">
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300"
-                        aria-label="Instagram">
-                        <i data-feather="instagram" class="w-6 h-6"></i>
-                    </a>
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300"
-                        aria-label="Facebook">
-                        <i data-feather="facebook" class="w-6 h-6"></i>
-                    </a>
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300"
-                        aria-label="E-mail">
-                        <i data-feather="mail" class="w-6 h-6"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="mt-10 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">
-            &copy; 2025 Obiektywnie. Wszelkie prawa zastrzeżone.
-        </div>
-    </footer>
-    <script>        AOS.init({ once: true, offset: 50, }); feather.replace(); const mobileMenuButton = document.getElementById('mobile-menu-button'); const mobileMenu = document.getElementById('mobile-menu'); mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); mobileMenuButton.querySelector('i').setAttribute('data-feather', mobileMenu.classList.contains('hidden') ? 'menu' : 'x'); feather.replace(); });    </script>
+    <script src="main.js"></script>
 </body>
 
 </html>
