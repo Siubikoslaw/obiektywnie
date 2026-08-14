@@ -11,9 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Highlight the current page's nav link
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const currentPageWithoutExt = currentPage.replace(/\.[^/.]+$/, '');
         document.querySelectorAll('#header-placeholder nav a[href]').forEach(link => {
             const href = link.getAttribute('href');
-            if (href === currentPage || href === '/' + currentPage || window.location.pathname.endsWith(href)) {
+            const hrefWithoutExt = href.replace(/\.[^/.]+$/, '').replace(/^\//, '');
+            if (href === currentPage || href === '/' + currentPage || currentPageWithoutExt === hrefWithoutExt) {
                 link.classList.add('font-bold');
             }
         });
