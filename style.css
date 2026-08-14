@@ -115,6 +115,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 .lightbox-caption { color: white; margin-top: 0.75rem; text-align: center; font-size: 1.05rem; }
 
+/* Services page: FAQ accordion */
+.accordion-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease;
+}
+.accordion-header:hover { background-color: #efefef; }
+.accordion-content {
+    padding: 1rem 1.5rem;
+    background-color: #fff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.accordion-content.active {
+    max-height: 200px;
+    transition: max-height 0.3s ease-in;
+}
+.accordion-icon { transition: transform 0.3s ease; }
+.accordion-header.active .accordion-icon { transform: rotate(180deg); }
+
 /* Full-page hero, shared by every page */
 .hero-full {
     position: relative;

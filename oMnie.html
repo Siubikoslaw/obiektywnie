@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fotograf - O Mnie</title>
-    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <title>Fotograf - O Mnie | Obiektywnie</title>
+    <meta name="description" content="Poznaj Małgorzatę Błażejowską-Baklarz, twórczynię marki Obiektywnie – fotografa z Opola specjalizującego się w prawdziwych, nieretuszowanych historiach.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -13,7 +15,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 
 <body class="bg-white text-gray-800 antialiased">
@@ -23,7 +24,7 @@
     <main>
         <section class="hero-full bg-gray-900 text-white">
             <div class="absolute inset-0 overflow-hidden">
-                <img src="oMnieH.jpeg" alt="Fotograf w akcji" class="w-full h-full object-cover">
+                <img src="oMnieH.jpeg" alt="Fotograf w akcji" class="w-full h-full object-cover" loading="eager" decoding="async" fetchpriority="high">
             </div>
             <div class="container mx-auto px-6 relative z-10" data-aos="fade-up" data-aos-duration="1000">
                 <h1 class="text-4xl md:text-6xl font-bold mb-4">Moja Historia</h1>
@@ -38,7 +39,8 @@
                 <div class="flex flex-col md:flex-row items-center gap-12">
                     <div class="md:w-1/2" data-aos="fade-right" data-aos-duration="1000">
                         <img src="oMnie1.jpeg" alt="Portret Fotografa"
-                            class="w-full h-auto object-cover rounded-xl shadow-lg transition-all duration-500 ease-in-out">
+                            class="w-full h-auto object-cover rounded-xl shadow-lg transition-all duration-500 ease-in-out"
+                            loading="lazy" decoding="async" width="1067" height="1600">
                     </div>
                     <div class="md:w-1/2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                         <h2 class="text-4xl font-bold mb-6 text-gray-900">
@@ -98,7 +100,7 @@
                             w którym fotografia spotka się ze sztuką, tańcem,
                             rozmową i ludźmi, którzy chcą tworzyć.
 
-                            Wierze, że każdy człowiek zasługuje na to, by zostać zauważonym.
+                            Wierzę, że każdy człowiek zasługuje na to, by zostać zauważonym.
 
                             Jeśli czujesz, że właśnie takiego spotkania szukasz, <b>będzie mi bardzo miło Cię
                                 poznać</b>.</p>
