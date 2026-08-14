@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Highlight the current page's nav link
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         document.querySelectorAll('#header-placeholder nav a[href]').forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
+            const href = link.getAttribute('href');
+            if (href === currentPage || href === '/' + currentPage || window.location.pathname.endsWith(href)) {
                 link.classList.add('font-bold');
             }
         });
