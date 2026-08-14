@@ -13,8 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         document.querySelectorAll('#header-placeholder nav a[href]').forEach(link => {
             if (link.getAttribute('href') === currentPage) {
-                link.classList.remove('text-gray-600', 'text-gray-700', 'font-medium');
-                link.classList.add('text-gray-900', 'font-bold');
+                link.classList.add('font-bold');
             }
         });
 
