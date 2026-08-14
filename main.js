@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const icon = mobileMenuButton.querySelector('i');
                 if (icon) {
                     icon.setAttribute('data-feather', mobileMenu.classList.contains('hidden') ? 'menu' : 'x');
-                    feather.replace();
+                    if (window.feather) feather.replace();
                 }
             });
         }
