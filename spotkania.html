@@ -1,17 +1,26 @@
+```html
 <!DOCTYPE html>
 <html lang="pl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fotograf - Historie | Obiektywnie</title>
-    <meta name="description" content="Historie z sesji zdjęciowych Obiektywnie – prawdziwe chwile i emocje uchwycone w Opolu i okolicach.">
+
+    <title>Spotkania | Obiektywnie – Fotograf Opole</title>
+
+    <meta name="description"
+        content="Spotkania z kobietą, rodziną, tańcem, marką i wydarzeniami. Naturalna fotografia pełna emocji, bliskości i prawdziwych historii. Obiektywnie – fotograf Opole.">
+
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script src="https://unpkg.com/feather-icons"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -20,73 +29,472 @@
     <div id="header-placeholder"></div>
 
     <main>
-        <section class="hero-full bg-gray-900 text-white">
-            <!-- TODO: podmień na prawdziwe zdjęcie z jednej z sesji -->
-            <img src="hero-spotkania.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="eager" decoding="async">
-            <div class="absolute inset-0 gradient-overlay"></div>
-            <div class="container mx-auto px-6 relative z-10" data-aos="fade-up" data-aos-duration="1000">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4">Spotkania</h1>
-                <p class="text-lg md:text-xl max-w-2xl mx-auto opacity-90">
-                    Za każdym zdjęciem stoi historia. Oto kilka z nich.
+
+        <!-- HERO -->
+        <section class="relative min-h-[75vh] flex items-center justify-center overflow-hidden bg-gray-900 text-white">
+
+            <img
+                src="hero-spotkania.jpg"
+                alt="Fotografia z sesji Obiektywnie"
+                class="absolute inset-0 w-full h-full object-cover"
+                loading="eager"
+                decoding="async"
+            >
+
+            <div class="absolute inset-0 bg-black/45"></div>
+
+            <div class="relative z-10 container mx-auto px-6 text-center"
+                 data-aos="fade-up"
+                 data-aos-duration="1100">
+
+                <p class="uppercase tracking-[0.3em] text-sm md:text-base mb-6 opacity-80">
+                    Obiektywnie
                 </p>
+
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-8">
+                    Spotkania
+                </h1>
+
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed opacity-90">
+                    Za każdym zdjęciem stoi człowiek.
+                    Za każdym spotkaniem — historia.
+                </p>
+
             </div>
         </section>
 
-        <!-- TODO: podmień poniższe karty na prawdziwe historie klientów wraz z ich zdjęciami -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-6 max-w-6xl">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    <article class="rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                        <img src="zdjecie.png" alt="Miejsce na zdjęcie do historii" class="w-full h-56 object-cover" loading="lazy" decoding="async">
-                        <div class="p-6 bg-gray-50">
-                            <h2 class="text-2xl font-bold mb-2 text-gray-900">Tytuł historii</h2>
-                            <p class="text-gray-700 leading-relaxed mb-4">
-                                Krótki opis tego, co wydarzyło się podczas tej sesji i dlaczego było wyjątkowe.
-                            </p>
-                            <a href="contact.html" class="text-gray-900 font-semibold hover:underline">Przeczytaj więcej &rarr;</a>
-                        </div>
-                    </article>
-                    <article class="rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                        <img src="zdjecie.png" alt="Miejsce na zdjęcie do historii" class="w-full h-56 object-cover" loading="lazy" decoding="async">
-                        <div class="p-6 bg-gray-50">
-                            <h2 class="text-2xl font-bold mb-2 text-gray-900">Tytuł historii</h2>
-                            <p class="text-gray-700 leading-relaxed mb-4">
-                                Krótki opis tego, co wydarzyło się podczas tej sesji i dlaczego było wyjątkowe.
-                            </p>
-                            <a href="contact.html" class="text-gray-900 font-semibold hover:underline">Przeczytaj więcej &rarr;</a>
-                        </div>
-                    </article>
-                    <article class="rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                        <img src="zdjecie.png" alt="Miejsce na zdjęcie do historii" class="w-full h-56 object-cover" loading="lazy" decoding="async">
-                        <div class="p-6 bg-gray-50">
-                            <h2 class="text-2xl font-bold mb-2 text-gray-900">Tytuł historii</h2>
-                            <p class="text-gray-700 leading-relaxed mb-4">
-                                Krótki opis tego, co wydarzyło się podczas tej sesji i dlaczego było wyjątkowe.
-                            </p>
-                            <a href="contact.html" class="text-gray-900 font-semibold hover:underline">Przeczytaj więcej &rarr;</a>
-                        </div>
-                    </article>
+
+        <!-- INTRO -->
+        <section class="py-24 md:py-32 bg-white">
+
+            <div class="container mx-auto px-6 max-w-4xl text-center"
+                 data-aos="fade-up">
+
+                <p class="text-sm uppercase tracking-[0.25em] text-gray-400 mb-6">
+                    Jak pracuję
+                </p>
+
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-8">
+                    Nie chodzi tylko o zdjęcia.
+                </h2>
+
+                <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
+                    Każde spotkanie jest inne. Czasem jest pełne ruchu,
+                    czasem ciszy. Czasem chodzi o rodzinę, czasem o markę,
+                    a czasem po prostu o to, żeby na chwilę zatrzymać się
+                    i zobaczyć siebie z innej perspektywy.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SPOTKANIE Z KOBIETĄ -->
+        <section class="py-20 md:py-28 bg-gray-50">
+
+            <div class="container mx-auto px-6 max-w-7xl">
+
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                    <div data-aos="fade-right">
+
+                        <img
+                            src="spotkanie-kobieta.jpg"
+                            alt="Portret kobiety podczas sesji fotograficznej"
+                            class="w-full h-[500px] md:h-[650px] object-cover"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+                    </div>
+
+                    <div data-aos="fade-left">
+
+                        <p class="text-sm uppercase tracking-[0.25em] text-gray-400 mb-5">
+                            01
+                        </p>
+
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+                            Spotkania z kobietą
+                        </h2>
+
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            Każda kobieta ma swoją historię. Podczas naszych spotkań
+                            tworzę przestrzeń, w której możesz na chwilę zwolnić,
+                            poczuć się swobodnie i zobaczyć siebie z nowej perspektywy.
+                        </p>
+
+                        <p class="text-lg text-gray-600 leading-relaxed mt-6">
+                            To nie tylko sesja zdjęciowa.
+                            To spotkanie z samą sobą.
+                        </p>
+
+                    </div>
+
                 </div>
+
             </div>
+
         </section>
 
-        <section class="bg-gray-900 py-20 text-center text-white">
-            <div class="container mx-auto px-6" data-aos="fade-up" data-aos-duration="1000">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">Masz swoją historię do opowiedzenia?</h2>
-                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 opacity-80">
-                    Chętnie ją uchwycę. Napisz do mnie i zacznijmy rozmowę.
-                </p>
-                <a href="contact.html"
-                    class="bg-beige text-gray-900 px-10 py-4 rounded-full text-xl font-semibold hover:bg-opacity-90 transform hover:scale-105 transition duration-300 shadow-lg">
-                    Skontaktuj Się
-                </a>
+
+        <!-- SPOTKANIA RODZINNE -->
+        <section class="py-20 md:py-28 bg-white">
+
+            <div class="container mx-auto px-6 max-w-7xl">
+
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                    <div class="lg:order-2" data-aos="fade-left">
+
+                        <img
+                            src="spotkanie-rodzina.jpg"
+                            alt="Rodzina podczas naturalnej sesji fotograficznej"
+                            class="w-full h-[500px] md:h-[650px] object-cover"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+                    </div>
+
+                    <div class="lg:order-1" data-aos="fade-right">
+
+                        <p class="text-sm uppercase tracking-[0.25em] text-gray-400 mb-5">
+                            02
+                        </p>
+
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+                            Spotkania rodzinne
+                        </h2>
+
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            Najpiękniejsze wspomnienia rodzą się w prostych chwilach.
+                            Fotografuję bliskość, czułość i codzienność — bez
+                            wymuszonych uśmiechów i sztucznych póz.
+                        </p>
+
+                        <p class="text-lg text-gray-600 leading-relaxed mt-6">
+                            Tworzę fotografie, do których będziecie wracać
+                            przez lata.
+                        </p>
+
+                    </div>
+
+                </div>
+
             </div>
+
         </section>
+
+
+        <!-- TANIEC -->
+        <section class="py-20 md:py-28 bg-gray-50">
+
+            <div class="container mx-auto px-6 max-w-7xl">
+
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                    <div data-aos="fade-right">
+
+                        <img
+                            src="spotkanie-taniec.jpg"
+                            alt="Tancerz podczas fotografowania ruchu"
+                            class="w-full h-[500px] md:h-[650px] object-cover"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+                    </div>
+
+                    <div data-aos="fade-left">
+
+                        <p class="text-sm uppercase tracking-[0.25em] text-gray-400 mb-5">
+                            03
+                        </p>
+
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+                            Spotkania z tańcem
+                        </h2>
+
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            Ruch opowiada historie, których nie da się wyrazić
+                            słowami. Fotografuję tancerzy podczas spektakli,
+                            wydarzeń i plenerów.
+                        </p>
+
+                        <p class="text-lg text-gray-600 leading-relaxed mt-6">
+                            Zatrzymuję emocje, energię i piękno chwili —
+                            nawet wtedy, gdy wszystko dzieje się w ułamku sekundy.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MARKA -->
+        <section class="py-20 md:py-28 bg-white">
+
+            <div class="container mx-auto px-6 max-w-7xl">
+
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                    <div class="lg:order-2" data-aos="fade-left">
+
+                        <img
+                            src="spotkanie-marka.jpg"
+                            alt="Fotografia dla marki i biznesu"
+                            class="w-full h-[500px] md:h-[650px] object-cover"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+                    </div>
+
+                    <div class="lg:order-1" data-aos="fade-right">
+
+                        <p class="text-sm uppercase tracking-[0.25em] text-gray-400 mb-5">
+                            04
+                        </p>
+
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+                            Spotkania z marką
+                        </h2>
+
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            Każda marka ma swoją historię. Pomagam ją opowiedzieć
+                            poprzez autentyczne fotografie, krótkie filmy i spójną
+                            komunikację wizualną.
+                        </p>
+
+                        <p class="text-lg text-gray-600 leading-relaxed mt-6">
+                            Buduję wizerunek oparty na zaufaniu, emocjach
+                            i prawdziwości.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- REPORTAŻ -->
+        <section class="py-20 md:py-28 bg-gray-50">
+
+            <div class="container mx-auto px-6 max-w-7xl">
+
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                    <div data-aos="fade-right">
+
+                        <img
+                            src="spotkanie-wydarzenie.jpg"
+                            alt="Reportaż fotograficzny podczas wydarzenia"
+                            class="w-full h-[500px] md:h-[650px] object-cover"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+                    </div>
+
+                    <div data-aos="fade-left">
+
+                        <p class="text-sm uppercase tracking-[0.25em] text-gray-400 mb-5">
+                            05
+                        </p>
+
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+                            Spotkania z wydarzeniem
+                        </h2>
+
+                        <p class="text-sm uppercase tracking-[0.15em] text-gray-400 mb-6">
+                            Reportaż
+                        </p>
+
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            Fotografuję kameralne uroczystości, reportaże oraz
+                            wydarzenia biznesowe.
+                        </p>
+
+                        <p class="text-lg text-gray-600 leading-relaxed mt-6">
+                            Jestem tam, gdzie dzieją się prawdziwe emocje —
+                            dyskretnie obserwując i zatrzymując najważniejsze momenty.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- UWAŻNOŚĆ -->
+        <section class="py-20 md:py-28 bg-white">
+
+            <div class="container mx-auto px-6 max-w-7xl">
+
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                    <div class="lg:order-2" data-aos="fade-left">
+
+                        <img
+                            src="spotkanie-uwaznosc.jpg"
+                            alt="Spokojna sesja związana z jogą i uważnością"
+                            class="w-full h-[500px] md:h-[650px] object-cover"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+                    </div>
+
+                    <div class="lg:order-1" data-aos="fade-right">
+
+                        <p class="text-sm uppercase tracking-[0.25em] text-gray-400 mb-5">
+                            06
+                        </p>
+
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+                            Spotkania z uważnością
+                        </h2>
+
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            Towarzyszę sesjom jogi, masażu, warsztatom i spotkaniom,
+                            podczas których najważniejszy jest spokój, oddech
+                            i obecność.
+                        </p>
+
+                        <p class="text-lg text-gray-600 leading-relaxed mt-6">
+                            Tworzę fotografie oddające atmosferę tych wyjątkowych
+                            chwil — bez pośpiechu i bez zbędnej ingerencji.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PORTRET - WYRÓŻNIONA SEKCJA -->
+        <section class="relative py-24 md:py-36 bg-gray-900 text-white overflow-hidden">
+
+            <div class="container mx-auto px-6 max-w-7xl">
+
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                    <div data-aos="fade-right">
+
+                        <p class="text-sm uppercase tracking-[0.25em] text-white/50 mb-5">
+                            07 · Najbliżej mi
+                        </p>
+
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
+                            Spotkania z portretem
+                        </h2>
+
+                        <p class="text-lg md:text-xl text-white/75 leading-relaxed">
+                            Portret jest mi najbliższy, bo pozwala zatrzymać to,
+                            czego często nie widać na pierwszy rzut oka.
+                        </p>
+
+                        <p class="text-lg md:text-xl text-white/75 leading-relaxed mt-6">
+                            Nie szukam idealnych póz ani wyreżyserowanych uśmiechów.
+                            Szukam spojrzenia, emocji i prawdy, które czynią każdy
+                            portret niepowtarzalnym.
+                        </p>
+
+                        <p class="text-lg md:text-xl text-white/75 leading-relaxed mt-6">
+                            Wierzę, że oczy potrafią opowiedzieć historię lepiej
+                            niż słowa.
+                        </p>
+
+                        <p class="text-lg md:text-xl text-white/90 leading-relaxed mt-6 font-medium">
+                            Dlatego tworzę portrety, które nie pokazują tylko wyglądu
+                            — pokazują człowieka.
+                        </p>
+
+                    </div>
+
+                    <div data-aos="fade-left">
+
+                        <img
+                            src="spotkanie-portret.jpg"
+                            alt="Naturalny portret osoby"
+                            class="w-full h-[550px] md:h-[700px] object-cover"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+        <section class="py-24 md:py-32 bg-white text-center">
+
+            <div class="container mx-auto px-6 max-w-4xl"
+                 data-aos="fade-up">
+
+                <p class="text-sm uppercase tracking-[0.25em] text-gray-400 mb-6">
+                    Może czas na Twoje spotkanie?
+                </p>
+
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8">
+                    Nie obiecuję Ci idealnych zdjęć.
+                    <br>
+                    <span class="text-gray-500">
+                        Obiecuję Ci prawdziwe spotkanie.
+                    </span>
+                </h2>
+
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Jeśli czujesz, że to może być coś dla Ciebie,
+                    napisz. Porozmawiajmy.
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="inline-block bg-gray-900 text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-gray-700 transform hover:scale-105 transition duration-300 shadow-lg"
+                >
+                    Skontaktuj się
+                </a>
+
+            </div>
+
+        </section>
+
     </main>
 
     <div id="footer-placeholder"></div>
 
-    <script src="main.js"></script>
-</body>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 80
+        });
 
+        feather.replace();
+    </script>
+
+    <script src="main.js"></script>
+
+</body>
 </html>
+```
