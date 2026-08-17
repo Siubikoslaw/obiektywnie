@@ -4,14 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Fotograf - Warsztaty | Obiektywnie</title>
-    <meta name="description" content="Warsztaty fotograficzne dla dzieci i dorosłych w Opolu. Naucz się patrzeć na świat z uważnością i ciekawością.">
+
+    <meta name="description"
+        content="Warsztaty Obiektywnie – uważne patrzenie, fotografia i odkrywanie świata dla dzieci, kobiet, dorosłych oraz szkół i przedszkoli.">
+
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script src="https://unpkg.com/feather-icons"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -20,81 +28,441 @@
     <div id="header-placeholder"></div>
 
     <main>
+
+        <!-- =====================================================
+             HERO — BEZ ZMIAN
+        ====================================================== -->
+
         <section class="hero-full bg-gray-900 text-white">
             <!-- TODO: podmień na prawdziwe zdjęcie z warsztatów -->
-            <img src="hero-warsztaty.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="eager" decoding="async">
+            <img src="hero-warsztaty.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="eager"
+                decoding="async">
+
             <div class="absolute inset-0 gradient-overlay"></div>
+
             <div class="container mx-auto px-6 relative z-10" data-aos="fade-up" data-aos-duration="1000">
                 <h1 class="text-4xl md:text-6xl font-bold mb-4">Warsztaty</h1>
+
                 <p class="text-lg md:text-xl max-w-2xl mx-auto opacity-90">
                     Fotografia zaczyna się dużo wcześniej niż naciśnięcie spustu migawki. Zaczyna się od uważności.
                 </p>
             </div>
         </section>
 
-        <section class="py-20 bg-white">
+
+        <!-- =====================================================
+             WPROWADZENIE
+        ====================================================== -->
+
+        <section class="py-24 bg-white">
             <div class="container mx-auto px-6 max-w-4xl text-center">
-                <h2 class="text-4xl font-bold mb-8 text-gray-900" data-aos="fade-up">
-                    Uczę patrzeć, nie tylko naciskać spust migawki
+
+                <span class="block text-sm uppercase tracking-[0.25em] text-gray-500 mb-5"
+                    data-aos="fade-up">
+                    Obiektywnie patrząc
+                </span>
+
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 text-gray-900"
+                    data-aos="fade-up">
+                    Warsztaty uważnego patrzenia
                 </h2>
-                <p class="text-lg leading-relaxed text-gray-700" data-aos="fade-up" data-aos-delay="100">
-                    Poza fotografowaniem prowadzę warsztaty dla dzieci i dorosłych. Dzieci uczę nie tylko obsługi
-                    aparatu, ale przede wszystkim patrzenia na świat z ciekawością i zachwytem. Dorosłym pokazuję,
-                    że dobre zdjęcie zaczyna się od uważności, a nie od sprzętu.
+
+                <p class="text-lg md:text-xl leading-relaxed text-gray-700"
+                    data-aos="fade-up"
+                    data-aos-delay="100">
+                    Fotografia może być czymś więcej niż robieniem zdjęć.
+                    Może być sposobem na zatrzymanie się, zauważenie drugiego człowieka
+                    i odkrywanie świata z zupełnie innej perspektywy.
                 </p>
+
+                <p class="text-lg md:text-xl leading-relaxed text-gray-700 mt-6"
+                    data-aos="fade-up"
+                    data-aos-delay="150">
+                    Dlatego stworzyłam kilka różnych form warsztatów –
+                    dla dzieci, kobiet, dorosłych oraz większych grup szkolnych
+                    i przedszkolnych.
+                </p>
+
             </div>
         </section>
 
-        <section class="py-20 bg-gray-100">
+
+        <!-- =====================================================
+             4 RODZAJE WARSZTATÓW
+        ====================================================== -->
+
+        <section class="py-24 bg-gray-100">
+
             <div class="container mx-auto px-6 max-w-6xl">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <div class="bg-white p-8 rounded-lg shadow-xl border-t-4 border-beige" data-aos="fade-up" data-aos-delay="100">
-                        <i data-feather="smile" class="w-10 h-10 text-beige mb-4"></i>
-                        <h3 class="text-3xl font-bold mb-4 text-gray-900">Warsztaty dla dzieci</h3>
-                        <p class="text-gray-700 leading-relaxed mb-6">
-                            Zabawa aparatem, która uczy uważności, cierpliwości i patrzenia na świat oczami
-                            odkrywcy. Dzieci wracają z warsztatów nie tylko z pierwszymi własnymi zdjęciami, ale
-                            i nową ciekawością otaczającego je świata.
-                        </p>
-                        <a href="contact.html?service=warsztaty-dzieci"
-                            class="inline-block bg-gray-900 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-beige hover:text-gray-900 transition duration-300">
-                            Zapytaj o terminy
-                        </a>
-                    </div>
-                    <div class="bg-white p-8 rounded-lg shadow-xl border-t-4 border-beige" data-aos="fade-up" data-aos-delay="200">
-                        <i data-feather="aperture" class="w-10 h-10 text-beige mb-4"></i>
-                        <h3 class="text-3xl font-bold mb-4 text-gray-900">Warsztaty dla dorosłych</h3>
-                        <p class="text-gray-700 leading-relaxed mb-6">
-                            Pokazuję, że fotografia to przede wszystkim uważność i obecność, a dopiero potem
-                            technika. Warsztaty dla dorosłych łączą praktykę z aparatem z pracą nad tym, jak
-                            naprawdę patrzeć na ludzi i chwile.
-                        </p>
-                        <a href="contact.html?service=warsztaty-dorosli"
-                            class="inline-block bg-gray-900 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-beige hover:text-gray-900 transition duration-300">
-                            Zapytaj o terminy
-                        </a>
-                    </div>
+
+                <div class="text-center mb-16" data-aos="fade-up">
+
+                    <span class="block text-sm uppercase tracking-[0.25em] text-gray-500 mb-4">
+                        Wybierz swoje spotkanie
+                    </span>
+
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900">
+                        Obiektywnie patrząc
+                    </h2>
+
                 </div>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+
+                    <!-- =================================================
+                         1. MALI ODKRYWCY
+                    ================================================== -->
+
+                    <article
+                        class="bg-white p-8 md:p-10 rounded-xl shadow-lg border-t-4 border-beige flex flex-col"
+                        data-aos="fade-up"
+                        data-aos-delay="100">
+
+                        <div class="mb-6">
+
+                            <i data-feather="compass"
+                                class="w-11 h-11 text-beige mb-6"></i>
+
+                            <span class="text-sm uppercase tracking-widest text-gray-500">
+                                Dla dzieci
+                            </span>
+
+                            <h3 class="text-3xl font-bold text-gray-900 mt-2">
+                                Mali Odkrywcy 🌿
+                            </h3>
+
+                        </div>
+
+                        <p class="text-xl font-semibold text-gray-900 leading-relaxed mb-6">
+                            Nie uczę dzieci fotografii.
+                            <br>
+                            Uczę je dostrzegać świat.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed mb-5">
+                            Fotografia jest narzędziem, dzięki któremu dzieci uczą się
+                            uważności, ciekawości i odkrywania piękna w rzeczach,
+                            które mijamy każdego dnia.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed mb-5">
+                            Nie chodzi o idealne zdjęcie.
+                            <br>
+                            Chodzi o radość odkrywania.
+                        </p>
+
+                        <div class="border-l-4 border-gray-200 pl-5 my-5">
+
+                            <p class="text-gray-600 italic leading-relaxed">
+                                Największym sukcesem warsztatów nie będzie piękna fotografia.
+                                Największym sukcesem będzie dziecko, które wróci do domu i powie:
+                            </p>
+
+                            <p class="text-xl font-semibold text-gray-900 mt-3">
+                                „Mamo, widziałem dziś tyle pięknych rzeczy!”
+                            </p>
+
+                        </div>
+
+                        <div class="mt-auto pt-6">
+
+                            <a href="contact.html?service=warsztaty-dzieci"
+                                class="inline-block bg-gray-900 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-beige hover:text-gray-900 transition duration-300">
+                                Zapytaj o warsztaty
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         2. ZOBACZ SIEBIE
+                    ================================================== -->
+
+                    <article
+                        class="bg-white p-8 md:p-10 rounded-xl shadow-lg border-t-4 border-beige flex flex-col"
+                        data-aos="fade-up"
+                        data-aos-delay="200">
+
+                        <div class="mb-6">
+
+                            <i data-feather="heart"
+                                class="w-11 h-11 text-beige mb-6"></i>
+
+                            <span class="text-sm uppercase tracking-widest text-gray-500">
+                                Dla kobiet
+                            </span>
+
+                            <h3 class="text-3xl font-bold text-gray-900 mt-2">
+                                Zobacz siebie 🌸
+                            </h3>
+
+                        </div>
+
+                        <p class="text-xl font-semibold text-gray-900 leading-relaxed mb-6">
+                            Nie tworzę warsztatów fotograficznych.
+                            <br>
+                            Tworzę przestrzeń, w której kobieta może na chwilę
+                            zatrzymać się, odetchnąć i spojrzeć na siebie
+                            z większą łagodnością.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed mb-5">
+                            Fotografia nie jest celem spotkania.
+                            Jest narzędziem, dzięki któremu można zatrzymać emocje,
+                            autentyczność i prawdziwe spojrzenie.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed mb-5">
+                            Nie uczę pozowania.
+                            Nie uczę bycia idealną.
+                        </p>
+
+                        <div class="border-l-4 border-gray-200 pl-5 my-5">
+
+                            <p class="text-xl font-semibold text-gray-900 leading-relaxed">
+                                Tworzę miejsce, w którym każda kobieta może
+                                poczuć się zauważona.
+                            </p>
+
+                        </div>
+
+                        <div class="mt-auto pt-6">
+
+                            <a href="contact.html?service=warsztaty-kobiety"
+                                class="inline-block bg-gray-900 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-beige hover:text-gray-900 transition duration-300">
+                                Zapytaj o warsztaty
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         3. ŚWIADOMA FOTOGRAFIA
+                    ================================================== -->
+
+                    <article
+                        class="bg-white p-8 md:p-10 rounded-xl shadow-lg border-t-4 border-beige flex flex-col"
+                        data-aos="fade-up"
+                        data-aos-delay="300">
+
+                        <div class="mb-6">
+
+                            <i data-feather="camera"
+                                class="w-11 h-11 text-beige mb-6"></i>
+
+                            <span class="text-sm uppercase tracking-widest text-gray-500">
+                                Dla dorosłych
+                            </span>
+
+                            <h3 class="text-3xl font-bold text-gray-900 mt-2">
+                                Świadoma fotografia 📷
+                            </h3>
+
+                        </div>
+
+                        <p class="text-xl font-semibold text-gray-900 leading-relaxed mb-6">
+                            Warsztaty dla osób, które chcą nie tylko robić zdjęcia,
+                            ale naprawdę rozumieć fotografię.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed mb-5">
+                            Porozmawiamy o świetle, kadrze, perspektywie, emocjach
+                            i tym, jak świadomie budować obraz.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed mb-5">
+                            Będziemy fotografować, eksperymentować i uczyć się
+                            patrzeć na codzienność z innej perspektywy.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed mb-5">
+                            To spotkanie dla tych, którzy chcą rozwijać swój warsztat,
+                            znaleźć własny sposób patrzenia i fotografować
+                            bardziej świadomie.
+                        </p>
+
+                        <div class="border-l-4 border-gray-200 pl-5 my-5">
+
+                            <p class="text-xl font-semibold text-gray-900 leading-relaxed">
+                                Nie chodzi o to, żeby zrobić więcej zdjęć.
+                                <br>
+                                Chodzi o to, żeby wiedzieć, dlaczego robisz właśnie to zdjęcie.
+                            </p>
+
+                        </div>
+
+                        <div class="mt-auto pt-6">
+
+                            <a href="contact.html?service=warsztaty-dorosli"
+                                class="inline-block bg-gray-900 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-beige hover:text-gray-900 transition duration-300">
+                                Zapytaj o warsztaty
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         4. ŚWIAT W OBIEKTYWIE
+                    ================================================== -->
+
+                    <article
+                        class="bg-white p-8 md:p-10 rounded-xl shadow-lg border-t-4 border-beige flex flex-col"
+                        data-aos="fade-up"
+                        data-aos-delay="400">
+
+                        <div class="mb-6">
+
+                            <i data-feather="users"
+                                class="w-11 h-11 text-beige mb-6"></i>
+
+                            <span class="text-sm uppercase tracking-widest text-gray-500">
+                                Szkoły i przedszkola
+                            </span>
+
+                            <h3 class="text-3xl font-bold text-gray-900 mt-2">
+                                Świat w obiektywie 🏫
+                            </h3>
+
+                        </div>
+
+                        <p class="text-xl font-semibold text-gray-900 leading-relaxed mb-6">
+                            Czy fotograf to zawód, czy pasja?
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed mb-5">
+                            To spotkanie, podczas którego fotografia staje się
+                            pretekstem do zabawy, odkrywania i uważnego patrzenia
+                            na świat.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed mb-5">
+                            Dzieci poznają podstawy fotografii poprzez proste zadania,
+                            eksperymenty i zabawy. Uczą się dostrzegać światło,
+                            kolory, kształty, emocje i szczegóły, które na co dzień
+                            łatwo przeoczyć.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed mb-5">
+                            Odpowiadamy też na pytanie:
+                            <strong class="text-gray-900">
+                                kim jest fotograf i czy to, co robi, to jego zawód czy pasja?
+                            </strong>
+                        </p>
+
+                        <div class="border-l-4 border-gray-200 pl-5 my-5">
+
+                            <p class="text-gray-700 leading-relaxed">
+                                Warsztaty dla większej grupy szkolnej lub przedszkolnej.
+                                Program dostosowany do wieku uczestników.
+                            </p>
+
+                        </div>
+
+                        <div class="mt-auto pt-6">
+
+                            <a href="contact.html?service=warsztaty-szkoly"
+                                class="inline-block bg-gray-900 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-beige hover:text-gray-900 transition duration-300">
+                                Zapytaj o warsztaty
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
             </div>
+
         </section>
 
-        <section class="bg-gray-900 py-20 text-center text-white">
-            <div class="container mx-auto px-6" data-aos="fade-up" data-aos-duration="1000">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">Chcesz dołączyć do najbliższych warsztatów?</h2>
-                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 opacity-80">
-                    Napisz do mnie, a wyślę Ci szczegóły dotyczące terminów i miejsca.
-                </p>
-                <a href="contact.html"
-                    class="bg-beige text-gray-900 px-10 py-4 rounded-full text-xl font-semibold hover:bg-opacity-90 transform hover:scale-105 transition duration-300 shadow-lg">
-                    Skontaktuj Się
-                </a>
+
+        <!-- =====================================================
+             UWAŻNOŚĆ — SEKCJA POMIĘDZY
+        ====================================================== -->
+
+        <section class="py-24 bg-white">
+
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+
+                <div data-aos="fade-up">
+
+                    <span class="text-5xl block mb-6">
+                        👁️
+                    </span>
+
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+                        Zatrzymać się. Zobaczyć. Zauważyć.
+                    </h2>
+
+                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+                        Każde z tych spotkań wygląda trochę inaczej,
+                        ale wszystkie mają wspólny początek —
+                        <strong class="text-gray-900">
+                            uważne patrzenie.
+                        </strong>
+                    </p>
+
+                </div>
+
             </div>
+
         </section>
+
+
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
+
+        <section class="bg-gray-900 py-24 text-center text-white">
+
+            <div class="container mx-auto px-6"
+                data-aos="fade-up"
+                data-aos-duration="1000">
+
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    Chcesz zaprosić mnie na warsztaty?
+                </h2>
+
+                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 opacity-80">
+                    Napisz do mnie, a porozmawiamy o odpowiedniej formie warsztatów,
+                    terminie i miejscu.
+                </p>
+
+                <a href="contact.html"
+                    class="inline-block bg-beige text-gray-900 px-10 py-4 rounded-full text-xl font-semibold hover:bg-opacity-90 transform hover:scale-105 transition duration-300 shadow-lg">
+                    Skontaktuj się
+                </a>
+
+            </div>
+
+        </section>
+
     </main>
+
 
     <div id="footer-placeholder"></div>
 
+
     <script src="main.js"></script>
+
+    <script>
+        AOS.init({
+            once: true,
+            duration: 800,
+            offset: 80
+        });
+
+        feather.replace();
+    </script>
+
 </body>
 
 </html>
