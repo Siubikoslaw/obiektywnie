@@ -12,6 +12,12 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Change 35% to adjust how far down the hero image is positioned. */
+        .hero-image {
+            object-position: center 35%;
+        }
+    </style>
     <!-- TODO: podmień adres domeny (obiektywnie.pl) na docelowy, gdy strona zostanie opublikowana -->
     <script type="application/ld+json">
     {
@@ -39,7 +45,7 @@
 
     <main>
         <section class="hero-full">
-            <img src="hero.jpeg" alt="Fotograf Obiektywnie - tło" class="absolute inset-0 w-full h-full object-cover object-top brightness-75" loading="eager" decoding="async" fetchpriority="high">
+            <img src="hero.jpeg" alt="Fotograf Obiektywnie - tło" class="hero-image absolute inset-0 w-full h-full object-cover brightness-75" loading="eager" decoding="async" fetchpriority="high">
             <div class="absolute inset-0 gradient-overlay"></div>
             <div class="relative z-10 text-white p-8" data-aos="fade-up" data-aos-duration="1200">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight leading-tight">
