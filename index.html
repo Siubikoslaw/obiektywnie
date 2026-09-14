@@ -7,7 +7,10 @@
     <meta name="description" content="Obiektywnie – fotograf z Opola. Uchwycam prawdziwe emocje w fotografii ślubnej, portretowej i wydarzeń. Umów sesję już dziś.">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <style>html{visibility:hidden}</style>
+    <script>setTimeout(function () { document.documentElement.style.visibility = 'visible'; }, 2000);</script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>document.documentElement.style.visibility = 'visible';</script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -41,7 +44,55 @@
 </head>
 <body class="bg-white text-gray-800 antialiased">
 
-    <div id="header-placeholder"></div>
+    <div id="header-placeholder">
+<nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-sm py-6">
+    <div class="container mx-auto px-4 sm:px-6 flex justify-between items-center gap-2 sm:gap-3 min-w-0">
+        <a href="index.html" class="relative flex items-center shrink-0 min-w-0" aria-label="Strona Główna">
+            <img
+                src="logo_navbar2.png"
+                alt=""
+                aria-hidden="true"
+                width="160"
+                height="56"
+                class="h-8 w-auto max-w-[120px] object-contain opacity-0 pointer-events-none sm:h-11 sm:max-w-[140px] md:h-12 lg:h-14 lg:max-w-[160px]"
+            >
+            <img
+                src="logo_navbar2.png"
+                alt="logo"
+                loading="eager"
+                decoding="async"
+                class="absolute left-0 top-1/2 -translate-y-1/2 h-14 w-auto max-w-[150px] object-contain pointer-events-none sm:h-16 sm:max-w-[170px] md:h-20 md:max-w-[190px] lg:h-24 lg:max-w-[210px]"
+            >
+        </a>
+        <div class="hidden lg:flex space-x-5 xl:space-x-7">
+            <a href="index.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide text-sm xl:text-base whitespace-nowrap">Strona Główna</a>
+            <a href="portfolio.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide text-sm xl:text-base whitespace-nowrap">Portfolio</a>
+            <a href="oMnie.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide text-sm xl:text-base whitespace-nowrap">O Mnie</a>
+            <a href="oMarce.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide text-sm xl:text-base whitespace-nowrap">O marce</a>
+            <a href="warsztaty.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide text-sm xl:text-base whitespace-nowrap">Warsztaty</a>
+            <a href="spotkania.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide text-sm xl:text-base whitespace-nowrap">Spotkania</a>
+            <a href="blog.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide text-sm xl:text-base whitespace-nowrap">Blog</a>
+            <a href="contact.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide text-sm xl:text-base whitespace-nowrap">Kontakt</a>
+        </div>
+        <button id="mobile-menu-button" class="lg:hidden flex-shrink-0 ml-auto p-2 -m-2 text-gray-700 hover:text-gray-900 transition duration-300" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg id="mobile-menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            <svg id="mobile-menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 hidden"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full max-h-[calc(100vh-5rem)] overflow-y-auto bg-white bg-opacity-95 backdrop-blur-sm shadow-lg py-4 border-t border-gray-100">
+        <div class="flex flex-col items-center space-y-4">
+            <a href="index.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Strona Główna</a>
+            <a href="portfolio.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Portfolio</a>
+            <a href="oMnie.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">O Mnie</a>
+            <a href="oMarce.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">O marce</a>
+            <a href="warsztaty.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Warsztaty</a>
+            <a href="spotkania.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Spotkania</a>
+            <a href="blog.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Blog</a>
+            <a href="contact.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Kontakt</a>
+        </div>
+    </div>
+</nav>
+    </div>
 
     <main>
         <section class="hero-full">
@@ -69,13 +120,16 @@
         <section class="py-24 bg-white">
             <div class="container mx-auto px-6 text-center max-w-4xl">
                 <h2 class="text-4xl md:text-5xl font-bold mb-8 text-gray-900" data-aos="fade-up" data-aos-duration="1000">
-                    Witaj w Świecie Fotografii
+                    Witaj w świecie mojej fotografii!
                 </h2>
                 <p class="text-lg leading-relaxed text-gray-700 mb-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                    Z siedzibą w urokliwym Opolu, jestem pasjonatem fotografii, oddanym uchwytywaniu najważniejszych chwil. Moja praca to eksploracja światła, emocji i niewypowiedzianych historii utkanych w każdej scenie. Od intymnej radości ślubu po cichą majestatyczność krajobrazu, dążę do tworzenia obrazów, które rezonują z autentycznością i ponadczasowym pięknem.
+                    Obiektywnie lubię patrzeć na ludzi. Na ich spojrzenia, emocje, gesty i na te momenty, które tworzą prawdziwe historie. Nie szukam perfekcji. Szukam tego uśmiechu, który pojawia się naprawdę. Spojrzenia, którego nie da się powtórzyć. Bliskości, której czasem nie widać na pierwszy rzut oka. Fotografuję Obiektywnie — z uważnością na człowieka.
                 </p>
-                <p class="text-lg leading-relaxed text-gray-700" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-                    Z artystycznym okiem i zaangażowaniem w najwyższą jakość, moim celem jest dostarczanie nie tylko zdjęć, ale trwałych wspomnień i wizualnych dziedzictw. Witaj w moim świecie.
+                <p class="text-lg leading-relaxed text-gray-700 mb-6" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                    Fotografuję historie — te wielkie i te zupełnie codzienne. Chwile bliskości, radości, wzruszenia i zmiany. Z artystycznym okiem i zaangażowaniem w najwyższą jakość. Od intymnej radości ślubu po cichą majestatyczność kobiecego piękna czy też niecodzienność krajobrazu, dążę do tworzenia obrazów, które rezonują z autentycznością i ponadczasowym pięknem. Moim celem jest dostarczanie nie tylko zdjęć, ale trwałych wspomnień, bo fotografia to dla mnie coś więcej. To sposób, żeby na chwilę się zatrzymać i zobaczyć to, co czasem umyka niespodziewanie.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-700 font-medium" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                    Witaj w moim świecie.
                 </p>
             </div>
         </section>
@@ -83,7 +137,7 @@
         <section class="py-24 bg-gray-100">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900" data-aos="fade-up" data-aos-duration="1000">
-                    Moje Kreacje Fotograficzne
+                    Moje historie fotograficzne
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     <div class="relative group overflow-hidden rounded-lg shadow-xl" data-aos="fade-up" data-aos-delay="100">
@@ -124,7 +178,50 @@
         </section>
     </main>
 
-    <div id="footer-placeholder"></div>
+    <div id="footer-placeholder">
+<footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+        <div>
+            <h3 class="text-xl font-bold mb-4 text-beige">
+                Obiektywnie
+            </h3>
+            <p class="text-gray-400 leading-relaxed">
+                Z Opola, uchwycam chwile, opowiadam historie.
+            </p>
+        </div>
+        <div>
+            <h3 class="text-xl font-bold mb-4 text-beige">Szybkie Linki</h3>
+            <ul class="space-y-2">
+                <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Strona Główna</a></li>
+                <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition duration-300">Portfolio</a></li>
+                <li><a href="oMnie.html" class="text-gray-400 hover:text-white transition duration-300">O Mnie</a></li>
+                <li><a href="oMarce.html" class="text-gray-400 hover:text-white transition duration-300">O marce</a></li>
+                <li><a href="warsztaty.html" class="text-gray-400 hover:text-white transition duration-300">Warsztaty</a></li>
+                <li><a href="spotkania.html" class="text-gray-400 hover:text-white transition duration-300">Spotkania</a></li>
+                <li><a href="blog.html" class="text-gray-400 hover:text-white transition duration-300">Blog</a></li>
+                <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Kontakt</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-xl font-bold mb-4 text-beige">Połącz się</h3>
+            <div class="flex justify-center md:justify-start space-x-6">
+                <a href="https://www.instagram.com/obiektywnie.opole/" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Instagram">
+                    <i data-feather="instagram" class="w-6 h-6"></i>
+                </a>
+                <a href="https://www.facebook.com/obiektywnie.opole/?locale=pl_PL" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Facebook">
+                    <i data-feather="facebook" class="w-6 h-6"></i>
+                </a>
+                <a href="mailto:kontakt@obiektywnie.pl" class="text-gray-400 hover:text-white transition duration-300" aria-label="E-mail">
+                    <i data-feather="mail" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="mt-10 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">
+        &copy; 2026 Obiektywnie. Wszelkie prawa zastrzeżone.
+    </div>
+</footer>
+    </div>
 
     <script src="main.js"></script>
 </body>
