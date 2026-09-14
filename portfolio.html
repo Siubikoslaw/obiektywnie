@@ -7,7 +7,10 @@
     <meta name="description" content="Portfolio Obiektywnie – wyselekcjonowana kolekcja zdjęć ślubnych, portretowych i wydarzeń wykonanych w Opolu i okolicach.">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <style>html{visibility:hidden}</style>
+    <script>setTimeout(function () { document.documentElement.style.visibility = 'visible'; }, 2000);</script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>document.documentElement.style.visibility = 'visible';</script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -16,13 +19,61 @@
 
 <body class="bg-white text-gray-800 antialiased">
 
-    <div id="header-placeholder"></div>
+    <div id="header-placeholder">
+<nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-sm py-6">
+    <div class="container mx-auto px-4 sm:px-6 flex justify-between items-center gap-2 sm:gap-3 min-w-0">
+        <a href="index.html" class="relative flex items-center shrink-0 min-w-0" aria-label="Strona Główna">
+            <img
+                src="logo_navbar2.png"
+                alt=""
+                aria-hidden="true"
+                width="160"
+                height="56"
+                class="h-8 w-auto max-w-[120px] object-contain opacity-0 pointer-events-none sm:h-11 sm:max-w-[140px] md:h-12 lg:h-14 lg:max-w-[160px]"
+            >
+            <img
+                src="logo_navbar2.png"
+                alt="logo"
+                loading="eager"
+                decoding="async"
+                class="absolute left-0 top-1/2 -translate-y-1/2 h-14 w-auto max-w-[150px] object-contain pointer-events-none sm:h-16 sm:max-w-[170px] md:h-20 md:max-w-[190px] lg:h-24 lg:max-w-[210px]"
+            >
+        </a>
+        <div class="hidden lg:flex space-x-5 xl:space-x-7">
+            <a href="index.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide text-sm xl:text-base whitespace-nowrap">Strona Główna</a>
+            <a href="portfolio.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide text-sm xl:text-base whitespace-nowrap">Portfolio</a>
+            <a href="oMnie.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide text-sm xl:text-base whitespace-nowrap">O Mnie</a>
+            <a href="oMarce.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide text-sm xl:text-base whitespace-nowrap">O marce</a>
+            <a href="warsztaty.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide text-sm xl:text-base whitespace-nowrap">Warsztaty</a>
+            <a href="spotkania.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide text-sm xl:text-base whitespace-nowrap">Spotkania</a>
+            <a href="blog.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide text-sm xl:text-base whitespace-nowrap">Blog</a>
+            <a href="contact.html" class="text-gray-600 hover:text-gray-900 transition duration-300 font-medium tracking-wide text-sm xl:text-base whitespace-nowrap">Kontakt</a>
+        </div>
+        <button id="mobile-menu-button" class="lg:hidden flex-shrink-0 ml-auto p-2 -m-2 text-gray-700 hover:text-gray-900 transition duration-300" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg id="mobile-menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            <svg id="mobile-menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 hidden"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full max-h-[calc(100vh-5rem)] overflow-y-auto bg-white bg-opacity-95 backdrop-blur-sm shadow-lg py-4 border-t border-gray-100">
+        <div class="flex flex-col items-center space-y-4">
+            <a href="index.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Strona Główna</a>
+            <a href="portfolio.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Portfolio</a>
+            <a href="oMnie.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">O Mnie</a>
+            <a href="oMarce.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">O marce</a>
+            <a href="warsztaty.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Warsztaty</a>
+            <a href="spotkania.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Spotkania</a>
+            <a href="blog.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Blog</a>
+            <a href="contact.html" class="text-gray-700 hover:text-gray-900 transition duration-300 font-medium text-lg">Kontakt</a>
+        </div>
+    </div>
+</nav>
+    </div>
 
     <main>
 
         <section class="hero-full bg-gray-900 text-white">
             <!-- TODO: podmień na prawdziwe zdjęcie z portfolio -->
-            <img src="hero-portfolio.webp" alt="" class="absolute inset-0 w-full h-full object-cover" loading="eager" decoding="async">
+            <img src="hero-portfolio.webp" alt="" class="mobile-focus-portfolio-camera absolute inset-0 w-full h-full object-cover" loading="eager" decoding="async">
             <div class="absolute inset-0 gradient-overlay"></div>
             <div class="container mx-auto px-6 relative z-10" data-aos="fade-up" data-aos-duration="1000">
                 <h1 class="text-4xl md:text-6xl font-bold mb-4">Moje Portfolio</h1>
@@ -34,19 +85,8 @@
 
         <section class="py-16 bg-white">
             <div class="container mx-auto px-6">
-                <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <!-- zdjecia -->
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="zdjecie.png" alt="Zdjęcie Ślubne 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" loading="lazy" decoding="async" />
-                    </div>
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-aos="zoom-in" data-aos-delay="150">
-                        <img src="zdjecie.png" alt="Zdjęcie Portretowe 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" loading="lazy" decoding="async" />
-                    </div>
-                    <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="zdjecie.png" alt="Zdjęcie Krajobrazowe 1" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" loading="lazy" decoding="async" />
-                    </div>
-
+                <div id="gallery">
+                    <p class="text-center text-gray-500">Wczytywanie galerii…</p>
                 </div>
             </div>
         </section>
@@ -61,10 +101,139 @@
 
     </main>
 
-    <div id="footer-placeholder"></div>
+    <div id="footer-placeholder">
+<footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+        <div>
+            <h3 class="text-xl font-bold mb-4 text-beige">
+                Obiektywnie
+            </h3>
+            <p class="text-gray-400 leading-relaxed">
+                Z Opola, uchwycam chwile, opowiadam historie.
+            </p>
+        </div>
+        <div>
+            <h3 class="text-xl font-bold mb-4 text-beige">Szybkie Linki</h3>
+            <ul class="space-y-2">
+                <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Strona Główna</a></li>
+                <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition duration-300">Portfolio</a></li>
+                <li><a href="oMnie.html" class="text-gray-400 hover:text-white transition duration-300">O Mnie</a></li>
+                <li><a href="oMarce.html" class="text-gray-400 hover:text-white transition duration-300">O marce</a></li>
+                <li><a href="warsztaty.html" class="text-gray-400 hover:text-white transition duration-300">Warsztaty</a></li>
+                <li><a href="spotkania.html" class="text-gray-400 hover:text-white transition duration-300">Spotkania</a></li>
+                <li><a href="blog.html" class="text-gray-400 hover:text-white transition duration-300">Blog</a></li>
+                <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Kontakt</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-xl font-bold mb-4 text-beige">Połącz się</h3>
+            <div class="flex justify-center md:justify-start space-x-6">
+                <a href="https://www.instagram.com/obiektywnie.opole/" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Instagram">
+                    <i data-feather="instagram" class="w-6 h-6"></i>
+                </a>
+                <a href="https://www.facebook.com/obiektywnie.opole/?locale=pl_PL" target="_blank" class="text-gray-400 hover:text-white transition duration-300" aria-label="Facebook">
+                    <i data-feather="facebook" class="w-6 h-6"></i>
+                </a>
+                <a href="mailto:kontakt@obiektywnie.pl" class="text-gray-400 hover:text-white transition duration-300" aria-label="E-mail">
+                    <i data-feather="mail" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="mt-10 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">
+        &copy; 2026 Obiektywnie. Wszelkie prawa zastrzeżone.
+    </div>
+</footer>
+    </div>
 
     <script src="main.js"></script>
     <script>
+        // Builds the gallery from portfolio/sessions.json - see portfolio/README.txt
+        // for how to add a new session. Nothing else on this page needs editing.
+        (async () => {
+            const gallery = document.getElementById("gallery");
+            const categoryNames = { sluby: "Śluby", portrety: "Portrety", wydarzenia: "Wydarzenia" };
+            const categoryOrder = ["sluby", "portrety", "wydarzenia"];
+
+            try {
+                const res = await fetch("portfolio/sessions.json");
+                if (!res.ok) throw new Error("portfolio/sessions.json: " + res.status);
+                const sessions = await res.json();
+
+                const byCategory = {};
+                sessions.forEach((session) => {
+                    (byCategory[session.category] ??= []).push(session);
+                });
+
+                const orderedCategories = [
+                    ...categoryOrder.filter((cat) => byCategory[cat]),
+                    ...Object.keys(byCategory).filter((cat) => !categoryOrder.includes(cat)),
+                ];
+
+                if (orderedCategories.length === 0) {
+                    gallery.innerHTML = '<p class="text-center text-gray-500">Portfolio jest w przygotowaniu — zdjęcia pojawią się już wkrótce.</p>';
+                    return;
+                }
+
+                gallery.innerHTML = orderedCategories.map((cat) => {
+                    const label = categoryNames[cat] || (cat.charAt(0).toUpperCase() + cat.slice(1));
+                    const sessionsHtml = byCategory[cat].map((session) => {
+                        const ext = session.ext || "jpg";
+                        const count = session.count || 0;
+                        const photosHtml = Array.from({ length: count }, (_, i) => {
+                            const n = i + 1;
+                            const delay = (i % 3) * 100 + 100;
+                            return `
+                                <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md" data-aos="zoom-in" data-aos-delay="${delay}">
+                                    <img src="portfolio/${session.id}/${n}.${ext}" alt="${session.title} - zdjęcie ${n}" class="w-full h-20 sm:h-32 md:h-44 lg:h-56 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer" loading="lazy" decoding="async">
+                                </div>`;
+                        }).join("");
+                        return `
+                            <div class="mb-16">
+                                <h3 class="text-xl font-semibold mb-6 text-gray-700">${session.title}</h3>
+                                <div class="grid gap-1.5 sm:gap-3 md:gap-4" style="grid-template-columns: repeat(${count}, minmax(0, 1fr));">${photosHtml}</div>
+                            </div>`;
+                    }).join("");
+                    return `
+                        <section id="${cat}" class="scroll-mt-28 mb-8">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-gray-900" data-aos="fade-up">${label}</h2>
+                            ${sessionsHtml}
+                        </section>`;
+                }).join("");
+
+                // A wrong "count" in sessions.json would otherwise leave a broken-image
+                // icon; just drop that tile instead of showing one.
+                gallery.querySelectorAll("img").forEach((img) => {
+                    img.addEventListener("error", () => img.closest(".gallery-item")?.remove());
+                });
+
+                // refresh() only recalculates positions for elements AOS already
+                // knew about from its initial scan; these gallery elements were
+                // just inserted, so they need a full re-scan via refreshHard().
+                // A single call right after innerHTML sometimes measures some
+                // elements before the browser has actually laid them out, leaving
+                // them permanently stuck invisible - a second pass after a paint
+                // catches anything the first one missed.
+                if (window.AOS) {
+                    AOS.refreshHard();
+                    requestAnimationFrame(() => requestAnimationFrame(() => AOS.refreshHard()));
+                }
+
+                // The browser tries to scroll to the #anchor once, at load time -
+                // before this section even exists (it's added asynchronously) or
+                // Tailwind has generated the scroll-mt-28 CSS, so that first attempt
+                // reliably lands in the wrong place. Do it ourselves once the target
+                // section is actually there.
+                if (location.hash) {
+                    const target = document.querySelector(location.hash);
+                    if (target) target.scrollIntoView();
+                }
+            } catch (err) {
+                console.error("Nie udało się wczytać portfolio:", err);
+                gallery.innerHTML = '<p class="text-center text-gray-500">Nie udało się wczytać galerii. Spróbuj odświeżyć stronę.</p>';
+            }
+        })();
+
         const lightbox = document.getElementById("lightbox");
         const lightboxImg = document.getElementById("lightbox-image");
         const lightboxClose = document.getElementById("lightbox-close");

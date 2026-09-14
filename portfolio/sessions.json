@@ -1,0 +1,23 @@
+[
+    {
+        "id": "slub-przykladowy",
+        "title": "Przykładowa sesja ślubna",
+        "category": "sluby",
+        "count": 5,
+        "ext": "webp"
+    },
+    {
+        "id": "portret-przykladowy",
+        "title": "Przykładowa sesja portretowa",
+        "category": "portrety",
+        "count": 5,
+        "ext": "webp"
+    },
+    {
+        "id": "wydarzenie-przykladowe",
+        "title": "Przykładowe wydarzenie",
+        "category": "wydarzenia",
+        "count": 5,
+        "ext": "webp"
+    }
+]
