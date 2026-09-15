@@ -151,3 +151,15 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     overflow: hidden;
 }
+
+/* O marce hero photo: show the bottom of the image on mobile instead of cropping it out */
+@media (max-width: 767px) {
+    .hero-omarce-img {
+        object-position: center bottom;
+    }
+}
+
+/* Warsztaty: "Szkoły i przedszkola" card photo, shifted to show more of the bottom */
+.warsztaty-szkoly-img {
+    object-position: center 75%;
+}
