@@ -157,6 +157,18 @@ h1, h2, h3, h4, h5, h6 {
     .hero-omarce-img {
         object-position: center bottom;
     }
+
+    /* The default gradient-overlay is nearly transparent in the middle, right where the
+       centered heading sits. Now that the crop shows more of the bright background there,
+       darken that middle band so the text stays readable. */
+    .hero-omarce-overlay {
+        background: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.65) 100%);
+    }
+}
+
+.hero-omarce-overlay ~ .container h1,
+.hero-omarce-overlay ~ .container p {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Warsztaty: "Szkoły i przedszkola" card photo, shifted to show more of the bottom */
