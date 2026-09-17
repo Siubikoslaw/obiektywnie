@@ -144,7 +144,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Full-page hero, shared by every page */
 .hero-full {
     position: relative;
-    height: 100vh;
+    height: 100vh; /* fallback for browsers without svh support */
+    height: 100svh; /* avoids jumping/cropping as mobile browser chrome shows/hides */
     display: flex;
     align-items: center;
     justify-content: center;
