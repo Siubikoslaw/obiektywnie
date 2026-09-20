@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
 
+/* AOS's fade-left/fade-right animations sit translated up to 100px off-canvas
+   until they scroll into view, which can widen the page's scrollable area on
+   mobile. overflow-x: hidden on body alone doesn't reliably clip that on every
+   browser, so it's set on html too. */
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Raleway', sans-serif;
     color: #333;
@@ -175,4 +183,15 @@ h1, h2, h3, h4, h5, h6 {
 /* Warsztaty: "Szkoły i przedszkola" card photo, shifted to show more of the bottom */
 .warsztaty-szkoly-img {
     object-position: center 75%;
+}
+
+/* Mobile nav dropdown: fill the rest of the screen with a solid panel (no
+   transparency) so hero text behind it can't bleed through the links, and
+   lock page scroll while it's open. */
+#mobile-menu {
+    height: calc(100vh - 5rem);
+}
+
+body.mobile-menu-open {
+    overflow: hidden;
 }

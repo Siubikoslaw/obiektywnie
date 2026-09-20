@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const isOpen = !mobileMenu.classList.contains('hidden');
             mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
             mobileMenuButton.setAttribute('aria-label', isOpen ? 'Zamknij menu' : 'Otwórz menu');
+            document.body.classList.toggle('mobile-menu-open', isOpen);
             if (menuIconOpen && menuIconClose) {
                 menuIconOpen.classList.toggle('hidden', isOpen);
                 menuIconClose.classList.toggle('hidden', !isOpen);
