@@ -193,6 +193,67 @@
                 });
             }
 
+            // ---- Justified mosaic ----
+            // Splits a session's photos into rows (keeping their order) so that every
+            // row fills the full width and has the same height for all of its photos,
+            // with the row height as close as possible to a target. Works for any
+            // mix of portrait and landscape photos and is recomputed on resize.
+            function bestRows(ratios, width, gap, target, maxPerRow) {
+                const n = ratios.length;
+                if (n > 14) return ratios.map((_, i) => [i]);
+                let best = null;
+                for (let mask = 0; mask < (1 << (n - 1)); mask++) {
+                    const rows = [];
+                    let cur = [0];
+                    for (let i = 1; i < n; i++) {
+                        if ((mask >> (i - 1)) & 1) { rows.push(cur); cur = [i]; } else cur.push(i);
+                    }
+                    rows.push(cur);
+                    if (rows.some((r) => r.length > maxPerRow)) continue;
+                    let cost = 0;
+                    for (const r of rows) {
+                        const sum = r.reduce((a, i) => a + ratios[i], 0);
+                        const h = (width - gap * (r.length - 1)) / sum;
+                        cost += (h / target - 1) ** 2;
+                    }
+                    if (!best || cost < best.cost) best = { cost, rows };
+                }
+                return best.rows;
+            }
+
+            function layoutGrid(grid) {
+                const items = [...grid.querySelectorAll(".pf-item")];
+                if (!items.length) return;
+                const width = grid.clientWidth;
+                if (!width) return;
+                const gap = parseFloat(getComputedStyle(grid).rowGap) || 8;
+                const target = width >= 900 ? 300 : width >= 560 ? 230 : 170;
+                const maxPerRow = width >= 560 ? 4 : 2; // keep photos big enough on phones
+                const ratios = items.map((el) => parseFloat(el.style.getPropertyValue("--ar")) || 1.5);
+                const rows = bestRows(ratios, width, gap, target, maxPerRow);
+                const frag = document.createDocumentFragment();
+                rows.forEach((idxs) => {
+                    const row = document.createElement("div");
+                    row.className = "pf-row";
+                    idxs.forEach((i) => row.appendChild(items[i]));
+                    frag.appendChild(row);
+                });
+                grid.replaceChildren(frag);
+            }
+
+            function layoutAll() {
+                gallery.querySelectorAll(".pf-grid").forEach(layoutGrid);
+            }
+
+            let lastWidth = 0;
+            window.addEventListener("resize", () => {
+                const w = gallery.clientWidth;
+                if (w === lastWidth) return; // ignore height-only changes (mobile address bar)
+                lastWidth = w;
+                clearTimeout(layoutAll.t);
+                layoutAll.t = setTimeout(layoutAll, 120);
+            });
+
             let eagerLeft = 3; // the first few images are above the fold: don't lazy-load them
 
             function renderSession(session) {
@@ -244,8 +305,14 @@
 
                     // A missing file would otherwise leave a broken-image icon; drop the tile instead.
                     gallery.querySelectorAll("img").forEach((img) => {
-                        img.addEventListener("error", () => img.closest(".pf-item")?.remove());
+                        img.addEventListener("error", () => {
+                            const grid = img.closest(".pf-grid");
+                            img.closest(".pf-item")?.remove();
+                            if (grid) layoutGrid(grid);
+                        });
                     });
+
+                    layoutAll();
 
                     // The browser tries to scroll to the #anchor once, at load time -
                     // before this section exists (it's added asynchronously), so do it
