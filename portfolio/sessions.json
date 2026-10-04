@@ -29,35 +29,6 @@
     ]
   },
   {
-    "id": "slub-gosia-michal",
-    "title": "Gosia i Michał",
-    "category": "sluby",
-    "count": 5,
-    "ext": "webp",
-    "photos": [
-      [
-        2400,
-        1600
-      ],
-      [
-        1600,
-        2400
-      ],
-      [
-        2400,
-        1600
-      ],
-      [
-        2400,
-        1600
-      ],
-      [
-        2400,
-        1600
-      ]
-    ]
-  },
-  {
     "id": "slub-magda-radek",
     "title": "Magda i Radek",
     "category": "sluby",
@@ -129,6 +100,35 @@
       [
         2400,
         1600
+      ],
+      [
+        2400,
+        1600
+      ],
+      [
+        2400,
+        1600
+      ],
+      [
+        2400,
+        1600
+      ]
+    ]
+  },
+  {
+    "id": "slub-gosia-michal",
+    "title": "Gosia i Michał",
+    "category": "sluby",
+    "count": 5,
+    "ext": "webp",
+    "photos": [
+      [
+        2400,
+        1600
+      ],
+      [
+        1600,
+        2400
       ],
       [
         2400,
