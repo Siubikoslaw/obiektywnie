@@ -1,45 +1,46 @@
 JAK DODAĆ NOWĄ SESJĘ DO PORTFOLIO
 ==================================
 
-1. Stwórz nowy folder w tym katalogu (portfolio/), np.:
-   portfolio/slub-kasia-marcin/
+Najprościej: skrypt, który sam zmniejsza zdjęcia, zamienia je na WebP,
+robi miniatury i dopisuje sesję do sessions.json.
 
-2. Wrzuć do niego zdjęcia, nazwane po kolei liczbami:
-   1.jpg, 2.jpg, 3.jpg, 4.jpg, 5.jpg
-   (wszystkie zdjęcia w jednej sesji muszą mieć to samo rozszerzenie —
-   jeśli eksportujesz z Lightrooma/telefonu jako .jpg, użyj .jpg;
-   jeśli masz .webp, użyj .webp)
+Jednorazowo (potrzebny Python):   pip install pillow
 
-3. Otwórz plik portfolio/sessions.json i dodaj JEDEN wpis na końcu listy, np.:
+Potem, z głównego folderu strony:
 
-   {
-       "id": "slub-kasia-marcin",
-       "title": "Ślub Kasi i Marcina",
-       "category": "sluby",
-       "count": 5,
-       "ext": "jpg"
-   }
+   python tools/optimize_portfolio.py "C:/zdjecia/sesja" slub-kasia-marcin "Ślub Kasi i Marcina" sluby
 
-   Pola:
-   - id       — musi być IDENTYCZNE z nazwą folderu z kroku 1
-   - title    — nazwa sesji widoczna na stronie (nad zdjęciami)
-   - category — jedna z: sluby / portrety / wydarzenia
-                (to od tego zależy, w której sekcji się pojawi)
-   - count    — ile zdjęć wrzuciłaś do tej sesji (np. 5)
-   - ext      — rozszerzenie plików (jpg / webp / png)
+   - pierwszy argument  - folder z JPG-ami (np. wyeksportowanymi z Lightrooma)
+   - drugi              - id sesji = nazwa folderu w portfolio/ (bez polskich znaków i spacji)
+   - trzeci             - tytuł widoczny na stronie
+   - czwarty            - kategoria: sluby / portrety / wydarzenia
 
-   Pamiętaj o przecinku po poprzednim wpisie (}, przed nowym {).
+   Domyślnie bierze pierwsze 5 zdjęć (alfabetycznie). Żeby wybrać własne,
+   dodaj na końcu --pick z numerami zdjęć liczonymi od 0 (kolejność = kolejność
+   na stronie), np.:   --pick 3,0,7,2,9
 
-4. Wrzuć cały folder portfolio/ (z nowym podfolderem i zaktualizowanym
-   sessions.json) na serwer. To wszystko — zdjęcia pojawią się
-   automatycznie na stronie portfolio.html, w odpowiedniej sekcji.
+   Uruchomienie skryptu drugi raz dla tego samego id nadpisuje sesję.
 
-Nie trzeba nic zmieniać w plikach .html — cała galeria buduje się sama
-na podstawie sessions.json.
+Na koniec wrzuć cały folder portfolio/ na serwer. Nie trzeba nic zmieniać
+w plikach .html - galeria buduje się sama na podstawie sessions.json.
 
-PRZYKŁADOWE SESJE
-==================
-Foldery slub-przykladowy/, portret-przykladowy/ i wydarzenie-przykladowe/
-to demo pokazujące jak to działa — użyto w nich zdjęć, które już są na
-stronie. Możesz je śmiało usunąć (razem z ich wpisami w sessions.json),
-gdy dodasz swoje prawdziwe sesje.
+
+CO POWSTAJE
+===========
+portfolio/<id>/1.webp, 2.webp ...        duże zdjęcie (do 1920 px, do powiększenia)
+portfolio/<id>/1-sm.webp, 2-sm.webp ...  miniatura (do 720 px, widoczna w galerii)
+portfolio/sessions.json                  lista sesji (wpis dopisuje skrypt)
+
+Skrypt usuwa też dane EXIF (w tym lokalizację GPS) z publikowanych zdjęć.
+
+
+RĘCZNIE (bez skryptu)
+=====================
+Można też wrzucić gotowe pliki 1.jpg, 2.jpg ... (albo .webp/.png) do
+portfolio/<id>/ i dodać do sessions.json wpis:
+
+   { "id": "slub-kasia-marcin", "title": "Ślub Kasi i Marcina",
+     "category": "sluby", "count": 5, "ext": "jpg" }
+
+Taka galeria zadziała, ale bez miniatur - strona pobierze pełne zdjęcia
+i będzie wolniejsza, dlatego lepiej używać skryptu.
